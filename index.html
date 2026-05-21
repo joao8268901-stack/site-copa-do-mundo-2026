@@ -725,7 +725,380 @@ footer{
                     <span>Total de Seleções</span>
                     <span class="position-name">48</span>
                 </div>
+<!-- =========================================
+ABA TÉCNICO - MONTE SUA SELEÇÃO
+COLE ABAIXO DA SEÇÃO ESCALAÇÕES
+========================================= -->
 
+<section class="section">
+
+    <h2 class="section-title">
+        Painel do <span>Técnico</span>
+    </h2>
+
+    <div class="coach-panel">
+
+        <!-- JOGADORES DISPONÍVEIS -->
+
+        <div class="coach-card">
+
+            <h3>🇧🇷 Lista dos 26 Jogadores</h3>
+
+            <div class="players-grid">
+
+                <div class="player-item">Alisson</div>
+                <div class="player-item">Ederson</div>
+                <div class="player-item">Bento</div>
+
+                <div class="player-item">Danilo</div>
+                <div class="player-item">Yan Couto</div>
+                <div class="player-item">Marquinhos</div>
+
+                <div class="player-item">Militão</div>
+                <div class="player-item">Bremer</div>
+                <div class="player-item">Gabriel Magalhães</div>
+
+                <div class="player-item">Wendell</div>
+                <div class="player-item">Arana</div>
+                <div class="player-item">Casemiro</div>
+
+                <div class="player-item">Bruno Guimarães</div>
+                <div class="player-item">Paquetá</div>
+                <div class="player-item">André</div>
+
+                <div class="player-item">João Gomes</div>
+                <div class="player-item">Rodrygo</div>
+                <div class="player-item">Vinicius Jr</div>
+
+                <div class="player-item">Raphinha</div>
+                <div class="player-item">Martinelli</div>
+                <div class="player-item">Neymar Jr</div>
+
+                <div class="player-item">Endrick</div>
+                <div class="player-item">Richarlison</div>
+                <div class="player-item">Pedro</div>
+
+                <div class="player-item">Savinho</div>
+                <div class="player-item">Estevão</div>
+
+            </div>
+
+        </div>
+
+        <!-- CAMPO TÁTICO -->
+
+        <div class="coach-card field-card">
+
+            <h3>⚽ Escalação Tática 4-3-3</h3>
+
+            <div class="field">
+
+                <!-- ATAQUE -->
+
+                <div class="field-row attack">
+                    <div class="position-card">
+                        <span>PE</span>
+                        <select>
+                            <option>Vinicius Jr</option>
+                            <option>Martinelli</option>
+                            <option>Neymar Jr</option>
+                        </select>
+                    </div>
+
+                    <div class="position-card">
+                        <span>CA</span>
+                        <select>
+                            <option>Endrick</option>
+                            <option>Pedro</option>
+                            <option>Richarlison</option>
+                        </select>
+                    </div>
+
+                    <div class="position-card">
+                        <span>PD</span>
+                        <select>
+                            <option>Rodrygo</option>
+                            <option>Raphinha</option>
+                            <option>Savinho</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- MEIO -->
+
+                <div class="field-row midfield">
+                    <div class="position-card">
+                        <span>MC</span>
+                        <select>
+                            <option>Bruno Guimarães</option>
+                            <option>Casemiro</option>
+                        </select>
+                    </div>
+
+                    <div class="position-card">
+                        <span>MEI</span>
+                        <select>
+                            <option>Paquetá</option>
+                            <option>Neymar Jr</option>
+                        </select>
+                    </div>
+
+                    <div class="position-card">
+                        <span>MC</span>
+                        <select>
+                            <option>João Gomes</option>
+                            <option>André</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- DEFESA -->
+
+                <div class="field-row defense">
+                    <div class="position-card">
+                        <span>LE</span>
+                        <select>
+                            <option>Arana</option>
+                            <option>Wendell</option>
+                        </select>
+                    </div>
+
+                    <div class="position-card">
+                        <span>ZAG</span>
+                        <select>
+                            <option>Marquinhos</option>
+                            <option>Bremer</option>
+                        </select>
+                    </div>
+
+                    <div class="position-card">
+                        <span>ZAG</span>
+                        <select>
+                            <option>Militão</option>
+                            <option>Gabriel Magalhães</option>
+                        </select>
+                    </div>
+
+                    <div class="position-card">
+                        <span>LD</span>
+                        <select>
+                            <option>Danilo</option>
+                            <option>Yan Couto</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- GOLEIRO -->
+
+                <div class="field-row goalkeeper">
+                    <div class="position-card keeper">
+                        <span>GK</span>
+                        <select>
+                            <option>Alisson</option>
+                            <option>Ederson</option>
+                            <option>Bento</option>
+                        </select>
+                    </div>
+                </div>
+
+            </div>
+
+            <button class="save-team">
+                Salvar Escalação
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+<style>
+
+/* ===== TÉCNICO ===== */
+
+.coach-panel{
+    display:grid;
+    grid-template-columns:1fr 1.3fr;
+    gap:30px;
+}
+
+.coach-card{
+    background:rgba(255,255,255,0.08);
+    border:1px solid rgba(255,255,255,0.08);
+    border-radius:28px;
+    padding:35px;
+    backdrop-filter:blur(15px);
+}
+
+.coach-card h3{
+    font-size:28px;
+    margin-bottom:25px;
+    color:#ffdf00;
+}
+
+/* LISTA JOGADORES */
+
+.players-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
+    gap:15px;
+}
+
+.player-item{
+    background:rgba(255,255,255,0.05);
+    padding:14px;
+    border-radius:12px;
+    text-align:center;
+    font-weight:600;
+    transition:0.3s;
+    cursor:pointer;
+}
+
+.player-item:hover{
+    background:rgba(255,223,0,0.15);
+    transform:translateY(-3px);
+}
+
+/* CAMPO */
+
+.field-card{
+    position:relative;
+}
+
+.field{
+    background:
+    linear-gradient(rgba(0,0,0,0.15), rgba(0,0,0,0.15)),
+    linear-gradient(90deg,#0b7a31,#0f9b3f);
+
+    border-radius:24px;
+
+    padding:40px 20px;
+
+    border:3px solid rgba(255,255,255,0.12);
+
+    min-height:700px;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+/* linhas do campo */
+
+.field::before{
+    content:"";
+    position:absolute;
+    inset:20px;
+    border:2px solid rgba(255,255,255,0.18);
+    border-radius:10px;
+}
+
+.field::after{
+    content:"";
+    position:absolute;
+    width:180px;
+    height:180px;
+    border:2px solid rgba(255,255,255,0.18);
+    border-radius:50%;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+}
+
+/* POSIÇÕES */
+
+.field-row{
+    display:flex;
+    justify-content:center;
+    gap:18px;
+    z-index:2;
+}
+
+.position-card{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:10px;
+}
+
+.position-card span{
+    background:#ffdf00;
+    color:#002776;
+    font-weight:800;
+    font-size:12px;
+    padding:6px 12px;
+    border-radius:999px;
+}
+
+.position-card select{
+    background:rgba(0,0,0,0.45);
+    color:white;
+    border:1px solid rgba(255,255,255,0.15);
+    padding:12px;
+    border-radius:12px;
+    font-weight:600;
+    outline:none;
+    min-width:150px;
+}
+
+.position-card select:hover{
+    border-color:#ffdf00;
+}
+
+.goalkeeper{
+    margin-top:20px;
+}
+
+.save-team{
+    width:100%;
+    margin-top:25px;
+    padding:18px;
+    border:none;
+    border-radius:16px;
+    background:linear-gradient(135deg,#009c3b,#ffdf00);
+    color:#002776;
+    font-weight:800;
+    font-size:16px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.save-team:hover{
+    transform:translateY(-4px);
+}
+
+/* RESPONSIVO */
+
+@media(max-width:1100px){
+
+    .coach-panel{
+        grid-template-columns:1fr;
+    }
+
+}
+
+@media(max-width:700px){
+
+    .field{
+        min-height:850px;
+    }
+
+    .field-row{
+        flex-wrap:wrap;
+    }
+
+    .position-card select{
+        min-width:120px;
+    }
+
+}
+
+</style>
                 <div class="player">
                     <span>Partidas</span>
                     <span class="position-name">104</span>
@@ -754,4 +1127,379 @@ footer{
 </footer>
 
 </body>
+    <!-- =========================================
+ABA TÉCNICO - MONTE SUA SELEÇÃO
+COLE ABAIXO DA SEÇÃO ESCALAÇÕES
+========================================= -->
+
+<section class="section">
+
+    <h2 class="section-title">
+        Painel do <span>Técnico</span>
+    </h2>
+
+    <div class="coach-panel">
+
+        <!-- JOGADORES DISPONÍVEIS -->
+
+        <div class="coach-card">
+
+            <h3>🇧🇷 Lista dos 26 Jogadores</h3>
+
+            <div class="players-grid">
+
+                <div class="player-item">Alisson</div>
+                <div class="player-item">Ederson</div>
+                <div class="player-item">Bento</div>
+
+                <div class="player-item">Danilo</div>
+                <div class="player-item">Yan Couto</div>
+                <div class="player-item">Marquinhos</div>
+
+                <div class="player-item">Militão</div>
+                <div class="player-item">Bremer</div>
+                <div class="player-item">Gabriel Magalhães</div>
+
+                <div class="player-item">Wendell</div>
+                <div class="player-item">Arana</div>
+                <div class="player-item">Casemiro</div>
+
+                <div class="player-item">Bruno Guimarães</div>
+                <div class="player-item">Paquetá</div>
+                <div class="player-item">André</div>
+
+                <div class="player-item">João Gomes</div>
+                <div class="player-item">Rodrygo</div>
+                <div class="player-item">Vinicius Jr</div>
+
+                <div class="player-item">Raphinha</div>
+                <div class="player-item">Martinelli</div>
+                <div class="player-item">Neymar Jr</div>
+
+                <div class="player-item">Endrick</div>
+                <div class="player-item">Richarlison</div>
+                <div class="player-item">Pedro</div>
+
+                <div class="player-item">Savinho</div>
+                <div class="player-item">Estevão</div>
+
+            </div>
+
+        </div>
+
+        <!-- CAMPO TÁTICO -->
+
+        <div class="coach-card field-card">
+
+            <h3>⚽ Escalação Tática 4-3-3</h3>
+
+            <div class="field">
+
+                <!-- ATAQUE -->
+
+                <div class="field-row attack">
+                    <div class="position-card">
+                        <span>PE</span>
+                        <select>
+                            <option>Vinicius Jr</option>
+                            <option>Martinelli</option>
+                            <option>Neymar Jr</option>
+                        </select>
+                    </div>
+
+                    <div class="position-card">
+                        <span>CA</span>
+                        <select>
+                            <option>Endrick</option>
+                            <option>Pedro</option>
+                            <option>Richarlison</option>
+                        </select>
+                    </div>
+
+                    <div class="position-card">
+                        <span>PD</span>
+                        <select>
+                            <option>Rodrygo</option>
+                            <option>Raphinha</option>
+                            <option>Savinho</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- MEIO -->
+
+                <div class="field-row midfield">
+                    <div class="position-card">
+                        <span>MC</span>
+                        <select>
+                            <option>Bruno Guimarães</option>
+                            <option>Casemiro</option>
+                        </select>
+                    </div>
+
+                    <div class="position-card">
+                        <span>MEI</span>
+                        <select>
+                            <option>Paquetá</option>
+                            <option>Neymar Jr</option>
+                        </select>
+                    </div>
+
+                    <div class="position-card">
+                        <span>MC</span>
+                        <select>
+                            <option>João Gomes</option>
+                            <option>André</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- DEFESA -->
+
+                <div class="field-row defense">
+                    <div class="position-card">
+                        <span>LE</span>
+                        <select>
+                            <option>Arana</option>
+                            <option>Wendell</option>
+                        </select>
+                    </div>
+
+                    <div class="position-card">
+                        <span>ZAG</span>
+                        <select>
+                            <option>Marquinhos</option>
+                            <option>Bremer</option>
+                        </select>
+                    </div>
+
+                    <div class="position-card">
+                        <span>ZAG</span>
+                        <select>
+                            <option>Militão</option>
+                            <option>Gabriel Magalhães</option>
+                        </select>
+                    </div>
+
+                    <div class="position-card">
+                        <span>LD</span>
+                        <select>
+                            <option>Danilo</option>
+                            <option>Yan Couto</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- GOLEIRO -->
+
+                <div class="field-row goalkeeper">
+                    <div class="position-card keeper">
+                        <span>GK</span>
+                        <select>
+                            <option>Alisson</option>
+                            <option>Ederson</option>
+                            <option>Bento</option>
+                        </select>
+                    </div>
+                </div>
+
+            </div>
+
+            <button class="save-team">
+                Salvar Escalação
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+<style>
+
+/* ===== TÉCNICO ===== */
+
+.coach-panel{
+    display:grid;
+    grid-template-columns:1fr 1.3fr;
+    gap:30px;
+}
+
+.coach-card{
+    background:rgba(255,255,255,0.08);
+    border:1px solid rgba(255,255,255,0.08);
+    border-radius:28px;
+    padding:35px;
+    backdrop-filter:blur(15px);
+}
+
+.coach-card h3{
+    font-size:28px;
+    margin-bottom:25px;
+    color:#ffdf00;
+}
+
+/* LISTA JOGADORES */
+
+.players-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
+    gap:15px;
+}
+
+.player-item{
+    background:rgba(255,255,255,0.05);
+    padding:14px;
+    border-radius:12px;
+    text-align:center;
+    font-weight:600;
+    transition:0.3s;
+    cursor:pointer;
+}
+
+.player-item:hover{
+    background:rgba(255,223,0,0.15);
+    transform:translateY(-3px);
+}
+
+/* CAMPO */
+
+.field-card{
+    position:relative;
+}
+
+.field{
+    background:
+    linear-gradient(rgba(0,0,0,0.15), rgba(0,0,0,0.15)),
+    linear-gradient(90deg,#0b7a31,#0f9b3f);
+
+    border-radius:24px;
+
+    padding:40px 20px;
+
+    border:3px solid rgba(255,255,255,0.12);
+
+    min-height:700px;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+/* linhas do campo */
+
+.field::before{
+    content:"";
+    position:absolute;
+    inset:20px;
+    border:2px solid rgba(255,255,255,0.18);
+    border-radius:10px;
+}
+
+.field::after{
+    content:"";
+    position:absolute;
+    width:180px;
+    height:180px;
+    border:2px solid rgba(255,255,255,0.18);
+    border-radius:50%;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+}
+
+/* POSIÇÕES */
+
+.field-row{
+    display:flex;
+    justify-content:center;
+    gap:18px;
+    z-index:2;
+}
+
+.position-card{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:10px;
+}
+
+.position-card span{
+    background:#ffdf00;
+    color:#002776;
+    font-weight:800;
+    font-size:12px;
+    padding:6px 12px;
+    border-radius:999px;
+}
+
+.position-card select{
+    background:rgba(0,0,0,0.45);
+    color:white;
+    border:1px solid rgba(255,255,255,0.15);
+    padding:12px;
+    border-radius:12px;
+    font-weight:600;
+    outline:none;
+    min-width:150px;
+}
+
+.position-card select:hover{
+    border-color:#ffdf00;
+}
+
+.goalkeeper{
+    margin-top:20px;
+}
+
+.save-team{
+    width:100%;
+    margin-top:25px;
+    padding:18px;
+    border:none;
+    border-radius:16px;
+    background:linear-gradient(135deg,#009c3b,#ffdf00);
+    color:#002776;
+    font-weight:800;
+    font-size:16px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.save-team:hover{
+    transform:translateY(-4px);
+}
+
+/* RESPONSIVO */
+
+@media(max-width:1100px){
+
+    .coach-panel{
+        grid-template-columns:1fr;
+    }
+
+}
+
+@media(max-width:700px){
+
+    .field{
+        min-height:850px;
+    }
+
+    .field-row{
+        flex-wrap:wrap;
+    }
+
+    .position-card select{
+        min-width:120px;
+    }
+
+}
+
+</style>
+
 </html>
