@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Tabela da Copa do Mundo 2026 | Emilia Cabral</title>
+<title>Copa do Mundo 2026 | Emilia Cabral</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,7 +19,6 @@
     --azul:#002776;
     --branco:#ffffff;
     --glass:rgba(255,255,255,0.08);
-    --glass2:rgba(255,255,255,0.05);
 }
 
 *{
@@ -28,53 +27,40 @@
     box-sizing:border-box;
 }
 
-html{
-    scroll-behavior:smooth;
-}
-
 body{
     font-family:'Montserrat',sans-serif;
     background:#000;
     color:white;
     overflow-x:hidden;
-    min-height:100vh;
-    position:relative;
 }
 
 /* ===== FUNDO ===== */
 
-.background{
+.bg{
     position:fixed;
     inset:0;
     z-index:-3;
+
     background:
-    linear-gradient(rgba(0,0,0,0.78), rgba(0,0,0,0.82)),
-    url('https://images.unsplash.com/photo-1517466787929-bc90951d0974?q=80&w=2070&auto=format&fit=crop');
+    linear-gradient(rgba(0,0,0,0.80), rgba(0,0,0,0.85)),
+    url('https://images.unsplash.com/photo-1511886929837-354d827aae26?q=80&w=2070&auto=format&fit=crop');
+
     background-size:cover;
     background-position:center;
-    animation:bgZoom 20s ease-in-out infinite alternate;
-}
-
-@keyframes bgZoom{
-    from{
-        transform:scale(1);
-    }
-    to{
-        transform:scale(1.08);
-    }
 }
 
 .overlay{
     position:fixed;
     inset:0;
     z-index:-2;
+
     background:
-    radial-gradient(circle at top left, rgba(0,156,59,0.35), transparent 40%),
-    radial-gradient(circle at bottom right, rgba(255,223,0,0.18), transparent 40%),
-    radial-gradient(circle at center, rgba(0,39,118,0.35), transparent 50%);
+    radial-gradient(circle at top left, rgba(0,156,59,0.30), transparent 40%),
+    radial-gradient(circle at bottom right, rgba(255,223,0,0.20), transparent 40%),
+    radial-gradient(circle at center, rgba(0,39,118,0.35), transparent 60%);
 }
 
-/* ===== NAVBAR ===== */
+/* ===== NAV ===== */
 
 nav{
     width:100%;
@@ -82,8 +68,11 @@ nav{
     top:0;
     left:0;
     z-index:1000;
-    backdrop-filter:blur(14px);
+
+    backdrop-filter:blur(15px);
+
     background:rgba(0,0,0,0.35);
+
     border-bottom:1px solid rgba(255,255,255,0.08);
 }
 
@@ -91,65 +80,52 @@ nav{
     width:90%;
     max-width:1400px;
     margin:auto;
+
     display:flex;
     justify-content:space-between;
     align-items:center;
+
     padding:20px 0;
 }
 
 .logo{
     font-size:30px;
     font-weight:800;
-    letter-spacing:2px;
     color:var(--amarelo);
-    text-transform:uppercase;
 }
 
 .logo span{
     color:var(--verde);
 }
 
-.nav-links{
+.links{
     display:flex;
-    gap:35px;
+    gap:30px;
 }
 
-.nav-links a{
-    color:white;
+.links a{
     text-decoration:none;
+    color:white;
+    transition:0.3s;
     font-weight:500;
-    transition:0.3s;
-    position:relative;
 }
 
-.nav-links a:hover{
+.links a:hover{
     color:var(--amarelo);
-}
-
-.nav-links a::after{
-    content:"";
-    position:absolute;
-    width:0%;
-    height:2px;
-    left:0;
-    bottom:-6px;
-    background:var(--amarelo);
-    transition:0.3s;
-}
-
-.nav-links a:hover::after{
-    width:100%;
 }
 
 /* ===== HERO ===== */
 
 .hero{
     min-height:100vh;
+
     display:flex;
-    align-items:center;
     justify-content:center;
+    align-items:center;
+
     text-align:center;
-    padding:120px 20px 60px;
+
+    padding:130px 20px 80px;
 }
 
 .hero-content{
@@ -158,14 +134,18 @@ nav{
 
 .badge{
     display:inline-block;
-    padding:10px 20px;
+
+    padding:10px 22px;
+
     border-radius:999px;
+
     background:rgba(255,223,0,0.12);
-    border:1px solid rgba(255,223,0,0.3);
+
     color:var(--amarelo);
-    font-weight:600;
-    margin-bottom:25px;
-    backdrop-filter:blur(10px);
+
+    border:1px solid rgba(255,223,0,0.25);
+
+    margin-bottom:30px;
 }
 
 .hero h1{
@@ -173,7 +153,6 @@ nav{
     line-height:1.05;
     margin-bottom:25px;
     font-weight:800;
-    text-shadow:0 5px 20px rgba(0,0,0,0.5);
 }
 
 .hero h1 span{
@@ -183,92 +162,53 @@ nav{
 }
 
 .hero p{
-    max-width:760px;
-    margin:auto;
     font-size:19px;
     line-height:1.8;
     color:rgba(255,255,255,0.85);
+
+    max-width:800px;
+    margin:auto;
 }
 
-.hero-buttons{
+.buttons{
     margin-top:40px;
+
     display:flex;
-    gap:20px;
     justify-content:center;
+    gap:20px;
     flex-wrap:wrap;
 }
 
 .btn{
     padding:16px 34px;
+
     border:none;
+
     border-radius:14px;
-    font-size:15px;
+
     font-weight:700;
+
     cursor:pointer;
-    transition:0.35s;
-    letter-spacing:0.5px;
+
+    transition:0.3s;
 }
 
-.btn-primary{
+.primary{
     background:linear-gradient(135deg,var(--verde),var(--amarelo));
     color:var(--azul);
-    box-shadow:0 15px 30px rgba(0,0,0,0.35);
 }
 
-.btn-primary:hover{
+.primary:hover{
     transform:translateY(-4px);
 }
 
-.btn-secondary{
+.secondary{
     background:rgba(255,255,255,0.08);
     color:white;
-    border:1px solid rgba(255,255,255,0.1);
-    backdrop-filter:blur(10px);
-}
-
-.btn-secondary:hover{
-    background:rgba(255,255,255,0.15);
-}
-
-/* ===== STATS ===== */
-
-.stats{
-    width:90%;
-    max-width:1300px;
-    margin:auto;
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
-    gap:25px;
-    margin-top:-80px;
-    position:relative;
-    z-index:10;
-}
-
-.card{
-    background:var(--glass);
     border:1px solid rgba(255,255,255,0.08);
-    border-radius:24px;
-    padding:35px;
-    backdrop-filter:blur(18px);
-    transition:0.35s;
-    box-shadow:0 10px 40px rgba(0,0,0,0.25);
 }
 
-.card:hover{
-    transform:translateY(-8px);
-}
-
-.card h2{
-    font-size:42px;
-    color:var(--amarelo);
-    margin-bottom:10px;
-}
-
-.card p{
-    color:rgba(255,255,255,0.75);
-}
-
-/* ===== TABELA ===== */
+/* ===== SEÇÕES ===== */
 
 .section{
     width:90%;
@@ -286,13 +226,18 @@ nav{
     color:var(--amarelo);
 }
 
-.table-container{
+/* ===== TABELA ===== */
+
+.table-box{
     overflow-x:auto;
-    border-radius:30px;
+
+    border-radius:28px;
+
     background:var(--glass);
+
+    backdrop-filter:blur(15px);
+
     border:1px solid rgba(255,255,255,0.08);
-    backdrop-filter:blur(18px);
-    box-shadow:0 15px 40px rgba(0,0,0,0.3);
 }
 
 table{
@@ -306,32 +251,22 @@ thead{
 }
 
 th{
-    padding:24px;
+    padding:22px;
     text-align:left;
-    font-size:15px;
-    color:white;
 }
 
 td{
-    padding:22px 24px;
-    border-top:1px solid rgba(255,255,255,0.06);
-    transition:0.3s;
+    padding:22px;
+    border-top:1px solid rgba(255,255,255,0.05);
 }
 
-tbody tr:hover td{
+tbody tr:hover{
     background:rgba(255,255,255,0.05);
 }
 
-.team{
-    display:flex;
-    align-items:center;
-    gap:12px;
-    font-weight:600;
-}
-
 .position{
-    font-weight:700;
     color:var(--amarelo);
+    font-weight:800;
 }
 
 .status{
@@ -341,30 +276,123 @@ tbody tr:hover td{
     font-weight:700;
 }
 
-.qualificado{
+.ok{
     background:rgba(0,255,128,0.18);
     color:#7dffba;
 }
 
-.playoff{
-    background:rgba(255,223,0,0.18);
-    color:#ffe978;
+/* ===== JOGOS ===== */
+
+.games{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:25px;
 }
 
-.eliminado{
-    background:rgba(255,0,76,0.18);
-    color:#ff8ca8;
+.game-card{
+    background:var(--glass);
+
+    border:1px solid rgba(255,255,255,0.08);
+
+    border-radius:24px;
+
+    padding:30px;
+
+    backdrop-filter:blur(15px);
+
+    transition:0.3s;
+}
+
+.game-card:hover{
+    transform:translateY(-5px);
+}
+
+.game-top{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:20px;
+    color:rgba(255,255,255,0.75);
+}
+
+.score{
+    font-size:34px;
+    font-weight:800;
+    text-align:center;
+    margin:25px 0;
+}
+
+.teams{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    font-weight:700;
+    font-size:18px;
+}
+
+/* ===== ESCALAÇÕES ===== */
+
+.lineups{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
+    gap:30px;
+}
+
+.lineup-card{
+    background:var(--glass);
+
+    border-radius:28px;
+
+    padding:35px;
+
+    border:1px solid rgba(255,255,255,0.08);
+
+    backdrop-filter:blur(15px);
+}
+
+.lineup-card h3{
+    font-size:28px;
+    margin-bottom:25px;
+    color:var(--amarelo);
+}
+
+.players{
+    display:grid;
+    gap:12px;
+}
+
+.player{
+    padding:14px 18px;
+
+    background:rgba(255,255,255,0.05);
+
+    border-radius:12px;
+
+    display:flex;
+    justify-content:space-between;
+
+    transition:0.3s;
+}
+
+.player:hover{
+    background:rgba(255,255,255,0.10);
+}
+
+.position-name{
+    color:rgba(255,255,255,0.70);
 }
 
 /* ===== FOOTER ===== */
 
 footer{
     margin-top:120px;
-    padding:40px 20px;
+
     text-align:center;
+
+    padding:40px 20px;
+
+    color:rgba(255,255,255,0.60);
+
     border-top:1px solid rgba(255,255,255,0.08);
-    background:rgba(0,0,0,0.3);
-    color:rgba(255,255,255,0.65);
 }
 
 /* ===== RESPONSIVO ===== */
@@ -372,10 +400,10 @@ footer{
 @media(max-width:900px){
 
     .hero h1{
-        font-size:48px;
+        font-size:50px;
     }
 
-    .nav-links{
+    .links{
         display:none;
     }
 
@@ -395,10 +423,6 @@ footer{
         font-size:32px;
     }
 
-    .card h2{
-        font-size:34px;
-    }
-
 }
 
 </style>
@@ -406,27 +430,28 @@ footer{
 
 <body>
 
-<div class="background"></div>
+<div class="bg"></div>
 <div class="overlay"></div>
 
-<!-- NAVBAR -->
+<!-- NAV -->
 
 <nav>
+
     <div class="nav-container">
 
         <div class="logo">
             Copa<span>2026</span>
         </div>
 
-        <div class="nav-links">
+        <div class="links">
             <a href="#">Início</a>
             <a href="#">Tabela</a>
             <a href="#">Jogos</a>
-            <a href="#">Classificação</a>
-            <a href="#">Contato</a>
+            <a href="#">Escalações</a>
         </div>
 
     </div>
+
 </nav>
 
 <!-- HERO -->
@@ -440,47 +465,19 @@ footer{
         </div>
 
         <h1>
-            Tabela da <span>Copa do Mundo 2026</span><br>
-            Emilia Cabral
+            Tabela da <span>Copa do Mundo 2026</span>
         </h1>
 
         <p>
-            Um painel moderno, elegante e profissional inspirado nas cores oficiais do Brasil,
-            com visual premium e experiência responsiva para acompanhar a maior competição
-            de futebol do planeta.
+            Acompanhe os grupos, jogos, classificação e escalações da Copa do Mundo FIFA 2026
+            em um site moderno, profissional e totalmente inspirado nas cores oficiais do Brasil.
         </p>
 
-        <div class="hero-buttons">
-            <button class="btn btn-primary">Ver Classificação</button>
-            <button class="btn btn-secondary">Próximos Jogos</button>
+        <div class="buttons">
+            <button class="btn primary">Ver Tabela</button>
+            <button class="btn secondary">Escalações</button>
         </div>
 
-    </div>
-
-</section>
-
-<!-- STATS -->
-
-<section class="stats">
-
-    <div class="card">
-        <h2>48</h2>
-        <p>Seleções Participantes</p>
-    </div>
-
-    <div class="card">
-        <h2>104</h2>
-        <p>Partidas Oficiais</p>
-    </div>
-
-    <div class="card">
-        <h2>3</h2>
-        <p>Países Sede</p>
-    </div>
-
-    <div class="card">
-        <h2>2026</h2>
-        <p>Temporada Mundial</p>
     </div>
 
 </section>
@@ -493,7 +490,7 @@ footer{
         Classificação <span>Grupo do Brasil</span>
     </h2>
 
-    <div class="table-container">
+    <div class="table-box">
 
         <table>
 
@@ -501,12 +498,12 @@ footer{
                 <tr>
                     <th>#</th>
                     <th>Seleção</th>
-                    <th>Pontos</th>
-                    <th>Jogos</th>
-                    <th>Vitórias</th>
-                    <th>Empates</th>
-                    <th>Derrotas</th>
-                    <th>Saldo</th>
+                    <th>P</th>
+                    <th>J</th>
+                    <th>V</th>
+                    <th>E</th>
+                    <th>D</th>
+                    <th>SG</th>
                     <th>Status</th>
                 </tr>
             </thead>
@@ -515,9 +512,7 @@ footer{
 
                 <tr>
                     <td class="position">1</td>
-                    <td>
-                        <div class="team">🇧🇷 Brasil</div>
-                    </td>
+                    <td>🇧🇷 Brasil</td>
                     <td>9</td>
                     <td>3</td>
                     <td>3</td>
@@ -525,7 +520,7 @@ footer{
                     <td>0</td>
                     <td>+7</td>
                     <td>
-                        <span class="status qualificado">
+                        <span class="status ok">
                             Classificado
                         </span>
                     </td>
@@ -533,9 +528,7 @@ footer{
 
                 <tr>
                     <td class="position">2</td>
-                    <td>
-                        <div class="team">🇵🇹 Portugal</div>
-                    </td>
+                    <td>🇵🇹 Portugal</td>
                     <td>6</td>
                     <td>3</td>
                     <td>2</td>
@@ -543,46 +536,34 @@ footer{
                     <td>1</td>
                     <td>+3</td>
                     <td>
-                        <span class="status playoff">
-                            Repescagem
+                        <span class="status ok">
+                            Classificado
                         </span>
                     </td>
                 </tr>
 
                 <tr>
                     <td class="position">3</td>
-                    <td>
-                        <div class="team">🇯🇵 Japão</div>
-                    </td>
+                    <td>🇯🇵 Japão</td>
                     <td>3</td>
                     <td>3</td>
                     <td>1</td>
                     <td>0</td>
                     <td>2</td>
                     <td>-2</td>
-                    <td>
-                        <span class="status eliminado">
-                            Eliminado
-                        </span>
-                    </td>
+                    <td>Eliminado</td>
                 </tr>
 
                 <tr>
                     <td class="position">4</td>
-                    <td>
-                        <div class="team">🇲🇽 México</div>
-                    </td>
+                    <td>🇲🇽 México</td>
                     <td>0</td>
                     <td>3</td>
                     <td>0</td>
                     <td>0</td>
                     <td>3</td>
                     <td>-8</td>
-                    <td>
-                        <span class="status eliminado">
-                            Eliminado
-                        </span>
-                    </td>
+                    <td>Eliminado</td>
                 </tr>
 
             </tbody>
@@ -593,8 +574,183 @@ footer{
 
 </section>
 
+<!-- JOGOS -->
+
+<section class="section">
+
+    <h2 class="section-title">
+        Próximos <span>Jogos</span>
+    </h2>
+
+    <div class="games">
+
+        <div class="game-card">
+
+            <div class="game-top">
+                <span>Fase de Grupos</span>
+                <span>12 Jun 2026</span>
+            </div>
+
+            <div class="teams">
+                <span>🇧🇷 Brasil</span>
+                <span>vs</span>
+                <span>🇯🇵 Japão</span>
+            </div>
+
+            <div class="score">
+                3 - 1
+            </div>
+
+        </div>
+
+        <div class="game-card">
+
+            <div class="game-top">
+                <span>Fase de Grupos</span>
+                <span>17 Jun 2026</span>
+            </div>
+
+            <div class="teams">
+                <span>🇧🇷 Brasil</span>
+                <span>vs</span>
+                <span>🇲🇽 México</span>
+            </div>
+
+            <div class="score">
+                2 - 0
+            </div>
+
+        </div>
+
+        <div class="game-card">
+
+            <div class="game-top">
+                <span>Fase de Grupos</span>
+                <span>21 Jun 2026</span>
+            </div>
+
+            <div class="teams">
+                <span>🇧🇷 Brasil</span>
+                <span>vs</span>
+                <span>🇵🇹 Portugal</span>
+            </div>
+
+            <div class="score">
+                1 - 0
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ESCALAÇÕES -->
+
+<section class="section">
+
+    <h2 class="section-title">
+        Escalação <span>Seleção Brasileira</span>
+    </h2>
+
+    <div class="lineups">
+
+        <div class="lineup-card">
+
+            <h3>🇧🇷 Time Titular</h3>
+
+            <div class="players">
+
+                <div class="player">
+                    <span>Alisson</span>
+                    <span class="position-name">Goleiro</span>
+                </div>
+
+                <div class="player">
+                    <span>Marquinhos</span>
+                    <span class="position-name">Zagueiro</span>
+                </div>
+
+                <div class="player">
+                    <span>Militão</span>
+                    <span class="position-name">Zagueiro</span>
+                </div>
+
+                <div class="player">
+                    <span>Danilo</span>
+                    <span class="position-name">Lateral</span>
+                </div>
+
+                <div class="player">
+                    <span>Bruno Guimarães</span>
+                    <span class="position-name">Meio</span>
+                </div>
+
+                <div class="player">
+                    <span>Paquetá</span>
+                    <span class="position-name">Meio</span>
+                </div>
+
+                <div class="player">
+                    <span>Vinicius Jr</span>
+                    <span class="position-name">Atacante</span>
+                </div>
+
+                <div class="player">
+                    <span>Neymar Jr</span>
+                    <span class="position-name">Camisa 10</span>
+                </div>
+
+                <div class="player">
+                    <span>Rodrygo</span>
+                    <span class="position-name">Atacante</span>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="lineup-card">
+
+            <h3>🏆 Informações FIFA 2026</h3>
+
+            <div class="players">
+
+                <div class="player">
+                    <span>Países Sede</span>
+                    <span class="position-name">EUA, México e Canadá</span>
+                </div>
+
+                <div class="player">
+                    <span>Total de Seleções</span>
+                    <span class="position-name">48</span>
+                </div>
+
+                <div class="player">
+                    <span>Partidas</span>
+                    <span class="position-name">104</span>
+                </div>
+
+                <div class="player">
+                    <span>Final</span>
+                    <span class="position-name">19 Julho 2026</span>
+                </div>
+
+                <div class="player">
+                    <span>Atual Campeão</span>
+                    <span class="position-name">Argentina</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
 <footer>
-    © 2026 • Tabela da Copa do Mundo • Emilia Cabral • Design Premium
+    © 2026 • Copa do Mundo FIFA • Emilia Cabral • Design Premium
 </footer>
 
 </body>
