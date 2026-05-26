@@ -1,4 +1,4 @@
-# 🌍⚽ COPA DO MUNDO 2026 — ULTRA FUTURE EDITION
+# 📺⚽ COPA DO MUNDO 2026 — ESPN STYLE EDITION
 
 ```html
 <!DOCTYPE html>
@@ -495,6 +495,262 @@ links.forEach(link => {
 </html>
 ```
 
+# 📡 ESPN STYLE EXPERIENCE
+
+```html
+<!-- BARRA ESPN -->
+<div class="espn-topbar">
+    <div class="live-indicator"></div>
+    <span>AO VIVO • COBERTURA COMPLETA DA COPA 2026</span>
+</div>
+
+<style>
+.espn-topbar{
+    width:100%;
+    background:#c40000;
+    color:white;
+    padding:12px 30px;
+    display:flex;
+    align-items:center;
+    gap:12px;
+    font-weight:700;
+    letter-spacing:1px;
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:9999;
+    box-shadow:0 4px 15px rgba(0,0,0,0.4);
+}
+
+.live-indicator{
+    width:14px;
+    height:14px;
+    background:#00ff6a;
+    border-radius:50%;
+    animation:blink 1s infinite;
+}
+
+@keyframes blink{
+0%{opacity:1}
+50%{opacity:0.3}
+100%{opacity:1}
+}
+
+.scoreboard{
+    width:90%;
+    margin:40px auto;
+    background:linear-gradient(145deg,#101010,#1f1f1f);
+    border-radius:25px;
+    padding:30px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    border:2px solid #c40000;
+    box-shadow:0 0 25px rgba(196,0,0,0.4);
+}
+
+.team-box{
+    text-align:center;
+}
+
+.team-box h2{
+    font-size:2rem;
+}
+
+.score-number{
+    font-size:5rem;
+    font-weight:900;
+    color:#ffffff;
+}
+
+.match-status{
+    background:#c40000;
+    padding:10px 20px;
+    border-radius:50px;
+    font-weight:700;
+}
+
+.news-panel{
+    width:90%;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:25px;
+}
+
+.news-card{
+    background:#111827;
+    border-left:5px solid #c40000;
+    padding:25px;
+    border-radius:20px;
+    transition:0.4s;
+}
+
+.news-card:hover{
+    transform:translateY(-8px);
+}
+
+.news-card h3{
+    color:#ffffff;
+    margin-bottom:12px;
+}
+
+.news-card p{
+    color:#d0d0d0;
+}
+
+.analise-box{
+    width:90%;
+    margin:50px auto;
+    background:rgba(255,255,255,0.05);
+    border-radius:25px;
+    padding:35px;
+    border:1px solid rgba(255,255,255,0.1);
+}
+
+.analise-box h2{
+    color:#ff2e2e;
+    margin-bottom:20px;
+}
+
+.tabela-classificacao{
+    width:90%;
+    margin:40px auto;
+    overflow:auto;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    background:#111827;
+    border-radius:20px;
+    overflow:hidden;
+}
+
+table th{
+    background:#c40000;
+    color:white;
+    padding:18px;
+}
+
+table td{
+    padding:16px;
+    border-bottom:1px solid rgba(255,255,255,0.08);
+    text-align:center;
+}
+
+table tr:hover{
+    background:rgba(255,255,255,0.04);
+}
+</style>
+
+<!-- PLACAR ESPN -->
+<section class="scoreboard">
+
+<div class="team-box">
+    <h2>🇧🇷 Brasil</h2>
+</div>
+
+<div>
+    <div class="score-number">2 x 1</div>
+    <div class="match-status">AO VIVO</div>
+</div>
+
+<div class="team-box">
+    <h2>🇦🇷 Argentina</h2>
+</div>
+
+</section>
+
+<!-- ÚLTIMAS NOTÍCIAS -->
+<h2 class="section-title">📰 Últimas Notícias</h2>
+
+<section class="news-panel">
+
+<div class="news-card">
+    <h3>Brasil confirma convocação oficial</h3>
+    <p>
+        Comissão técnica divulga lista final para a Copa do Mundo 2026.
+    </p>
+</div>
+
+<div class="news-card">
+    <h3>Mbappé lidera estatísticas</h3>
+    <p>
+        Atacante francês é destaque em velocidade e finalizações.
+    </p>
+</div>
+
+<div class="news-card">
+    <h3>Nova tecnologia nos estádios</h3>
+    <p>
+        Copa 2026 terá inteligência artificial e replay holográfico.
+    </p>
+</div>
+
+</section>
+
+<!-- ANALISE ESPN -->
+<section class="analise-box">
+
+<h2>🎙️ Análise Técnica</h2>
+
+<p>
+A Seleção Brasileira chega como uma das favoritas da competição.
+Com jogadores rápidos pelos lados e um meio-campo técnico,
+a equipe apresenta grande intensidade ofensiva.
+</p>
+
+</section>
+
+<!-- TABELA -->
+<section class="tabela-classificacao">
+<table>
+<tr>
+<th>Seleção</th>
+<th>Pontos</th>
+<th>Vitórias</th>
+<th>Gols</th>
+</tr>
+
+<tr>
+<td>🇧🇷 Brasil</td>
+<td>9</td>
+<td>3</td>
+<td>8</td>
+</tr>
+
+<tr>
+<td>🇫🇷 França</td>
+<td>7</td>
+<td>2</td>
+<td>6</td>
+</tr>
+
+<tr>
+<td>🇦🇷 Argentina</td>
+<td>6</td>
+<td>2</td>
+<td>5</td>
+</tr>
+
+</table>
+</section>
+```
+
+# 📺 RECURSOS ESPN STYLE
+
+✅ Placar estilo transmissão ESPN
+✅ Barra AO VIVO profissional
+✅ Notícias esportivas
+✅ Painel de análise técnica
+✅ Tabela de classificação
+✅ Layout jornalístico premium
+✅ Interface moderna esportiva
+✅ Visual transmissão televisiva
+✅ Cobertura completa da Copa
+✅ Efeitos profissionais de broadcast
+
 # 🛸 RECURSOS ULTRA
 
 ✅ Sistema visual ULTRA FUTURE
@@ -622,3 +878,4 @@ speed: 2
 }
 });
 </script>
+
