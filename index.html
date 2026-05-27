@@ -1,881 +1,219 @@
-# 📺⚽ COPA DO MUNDO 2026 — ESPN STYLE EDITION
-
-```html
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Copa do Mundo 2026 | 3D FUTURE</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Copa do Mundo 2026</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
 
-<style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
+  <!-- Fonte -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-:root{
-    --bg:#050816;
-    --card:#0e1630;
-    --cyan:#00f7ff;
-    --blue:#2f7bff;
-    --purple:#8c52ff;
-    --white:#ffffff;
-    --glass:rgba(255,255,255,0.08);
-}
-
-body{
-    font-family:'Poppins',sans-serif;
-    background:linear-gradient(180deg,#03040d,#071028,#08152f);
-    color:white;
-    overflow-x:hidden;
-}
-
-/* ===== FUNDO FUTURISTA ===== */
-body::before{
-    content:'';
-    position:fixed;
-    width:100%;
-    height:100%;
-    background:
-    radial-gradient(circle at top left, rgba(0,247,255,0.25), transparent 30%),
-    radial-gradient(circle at bottom right, rgba(140,82,255,0.25), transparent 30%);
-    z-index:-1;
-}
-
-/* ===== HEADER ===== */
-header{
-    width:100%;
-    padding:25px 7%;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    position:sticky;
-    top:0;
-    z-index:1000;
-    backdrop-filter:blur(12px);
-    background:rgba(0,0,0,0.3);
-    border-bottom:1px solid rgba(255,255,255,0.1);
-}
-
-.logo{
-    font-size:2rem;
-    font-weight:800;
-    color:var(--cyan);
-    text-shadow:0 0 15px var(--cyan);
-}
-
-nav a{
-    text-decoration:none;
-    color:white;
-    margin-left:25px;
-    font-weight:500;
-    transition:0.3s;
-}
-
-nav a:hover{
-    color:var(--cyan);
-}
-
-/* ===== HERO ===== */
-.hero{
-    min-height:100vh;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-    padding:50px;
-    position:relative;
-}
-
-.hero-content{
-    max-width:900px;
-    animation:float 4s ease-in-out infinite;
-}
-
-.hero h1{
-    font-size:5rem;
-    line-height:1.1;
-    margin-bottom:25px;
-    background:linear-gradient(90deg,#00f7ff,#8c52ff,#2f7bff);
-    -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent;
-}
-
-.hero p{
-    font-size:1.2rem;
-    color:#d6d6d6;
-    margin-bottom:35px;
-}
-
-.btn{
-    display:inline-block;
-    padding:16px 35px;
-    background:linear-gradient(90deg,var(--cyan),var(--blue));
-    border-radius:50px;
-    color:white;
-    font-weight:700;
-    text-decoration:none;
-    box-shadow:0 0 20px rgba(0,247,255,0.4);
-    transition:0.4s;
-}
-
-.btn:hover{
-    transform:translateY(-5px) scale(1.05);
-}
-
-@keyframes float{
-    0%{transform:translateY(0px)}
-    50%{transform:translateY(-15px)}
-    100%{transform:translateY(0px)}
-}
-
-/* ===== TITULOS ===== */
-.section-title{
-    text-align:center;
-    font-size:3rem;
-    margin:80px 0 50px;
-    color:var(--cyan);
-    text-shadow:0 0 20px var(--cyan);
-}
-
-/* ===== CARDS 3D ===== */
-.grid{
-    width:90%;
-    margin:auto;
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-    gap:30px;
-}
-
-.card{
-    background:var(--glass);
-    border:1px solid rgba(255,255,255,0.1);
-    border-radius:25px;
-    padding:25px;
-    backdrop-filter:blur(15px);
-    transition:0.5s;
-    transform-style:preserve-3d;
-    box-shadow:0 15px 35px rgba(0,0,0,0.4);
-}
-
-.card:hover{
-    transform:rotateY(10deg) rotateX(10deg) translateY(-10px);
-    border-color:var(--cyan);
-    box-shadow:0 0 30px rgba(0,247,255,0.4);
-}
-
-.card img{
-    width:100%;
-    height:220px;
-    object-fit:cover;
-    border-radius:18px;
-    margin-bottom:18px;
-}
-
-.card h3{
-    margin-bottom:10px;
-    color:var(--cyan);
-}
-
-.card p{
-    color:#d8d8d8;
-    font-size:0.95rem;
-}
-
-/* ===== JOGOS ===== */
-.matches{
-    width:90%;
-    margin:auto;
-    display:grid;
-    gap:25px;
-}
-
-.match{
-    background:rgba(255,255,255,0.05);
-    border-radius:20px;
-    padding:25px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    backdrop-filter:blur(10px);
-    transition:0.4s;
-}
-
-.match:hover{
-    transform:scale(1.02);
-    box-shadow:0 0 25px rgba(0,247,255,0.3);
-}
-
-.team{
-    font-size:1.3rem;
-    font-weight:700;
-}
-
-.vs{
-    font-size:2rem;
-    color:var(--cyan);
-}
-
-.date{
-    color:#cfcfcf;
-}
-
-/* ===== ESTATISTICAS ===== */
-.stats{
-    width:90%;
-    margin:auto;
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:25px;
-}
-
-.stat-box{
-    background:linear-gradient(145deg,#081124,#111f42);
-    border-radius:25px;
-    padding:35px;
-    text-align:center;
-    transition:0.4s;
-}
-
-.stat-box:hover{
-    transform:translateY(-10px);
-}
-
-.stat-box h2{
-    font-size:3rem;
-    color:var(--cyan);
-}
-
-.stat-box p{
-    margin-top:10px;
-    color:#d6d6d6;
-}
-
-/* ===== FOOTER ===== */
-footer{
-    margin-top:100px;
-    padding:40px;
-    text-align:center;
-    background:rgba(0,0,0,0.4);
-    border-top:1px solid rgba(255,255,255,0.1);
-}
-
-footer h2{
-    color:var(--cyan);
-    margin-bottom:15px;
-}
-
-/* ===== RESPONSIVO ===== */
-@media(max-width:900px){
-
-.hero h1{
-    font-size:3rem;
-}
-
-nav{
-    display:none;
-}
-
-.match{
-    flex-direction:column;
-    gap:15px;
-}
-
-}
-</style>
+  <!-- Ícones -->
+  <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
+
 <body>
 
-<header>
-    <div class="logo">⚽ WORLD CUP 2026</div>
+  <!-- MENU -->
+  <header class="header">
+    <div class="logo">
+      <i class="fa-solid fa-futbol"></i>
+      FIFA 2026
+    </div>
 
     <nav>
-        <a href="#selecoes">Seleções</a>
-        <a href="#jogadores">Jogadores</a>
-        <a href="#jogos">Jogos</a>
-        <a href="#stats">Estatísticas</a>
+      <ul class="menu">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#selecoes">Seleções</a></li>
+        <li><a href="#jogadores">Jogadores</a></li>
+        <li><a href="#jogos">Jogos</a></li>
+        <li><a href="#ranking">Ranking</a></li>
+        <li><a href="#noticias">Notícias</a></li>
+      </ul>
     </nav>
-</header>
+  </header>
 
-<!-- HERO -->
-<section class="hero">
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="overlay"></div>
+
     <div class="hero-content">
-        <h1>COPA DO MUNDO 2026<br>3D FUTURE</h1>
+      <h1>COPA DO MUNDO 2026</h1>
+      <p>O maior espetáculo do futebol mundial em uma experiência digital futurista.</p>
 
-        <p>
-            A experiência futurista definitiva da Copa do Mundo FIFA 2026.
-            Explore seleções, jogadores convocados, jogos, estatísticas e muito mais.
-        </p>
-
-        <a href="#selecoes" class="btn">EXPLORAR AGORA</a>
+      <button class="btn">Explorar Campeonato</button>
     </div>
-</section>
+  </section>
 
-<!-- SELEÇÕES -->
-<h2 class="section-title" id="selecoes">🌍 Seleções Favoritas</h2>
+  <!-- SELEÇÕES -->
+  <section class="selecoes" id="selecoes">
+    <h2>Seleções Classificadas</h2>
 
-<section class="grid">
+    <div class="cards">
 
-<div class="card">
-    <img src="https://images.unsplash.com/photo-1517927033932-b3d18e61fb3a?q=80&w=1200&auto=format&fit=crop" alt="Brasil">
-    <h3>🇧🇷 Brasil</h3>
-    <p>
-        Uma das maiores seleções da história do futebol mundial.
-        Forte candidata ao título em 2026.
-    </p>
-</div>
+      <div class="card">
+        <img src="https://flagcdn.com/w320/br.png">
+        <h3>Brasil</h3>
+        <p>5 títulos mundiais</p>
+      </div>
 
-<div class="card">
-    <img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?q=80&w=1200&auto=format&fit=crop" alt="Argentina">
-    <h3>🇦🇷 Argentina</h3>
-    <p>
-        Atual gigante do futebol sul-americano com elenco extremamente técnico.
-    </p>
-</div>
+      <div class="card">
+        <img src="https://flagcdn.com/w320/ar.png">
+        <h3>Argentina</h3>
+        <p>Atual campeã mundial</p>
+      </div>
 
-<div class="card">
-    <img src="https://images.unsplash.com/photo-1522778119026-d647f0596c20?q=80&w=1200&auto=format&fit=crop" alt="França">
-    <h3>🇫🇷 França</h3>
-    <p>
-        Seleção veloz, ofensiva e recheada de craques mundiais.
-    </p>
-</div>
+      <div class="card">
+        <img src="https://flagcdn.com/w320/fr.png">
+        <h3>França</h3>
+        <p>Potência europeia</p>
+      </div>
 
-</section>
+      <div class="card">
+        <img src="https://flagcdn.com/w320/pt.png">
+        <h3>Portugal</h3>
+        <p>Nova geração forte</p>
+      </div>
 
-<!-- JOGADORES -->
-<h2 class="section-title" id="jogadores">⭐ Jogadores Convocados</h2>
+    </div>
+  </section>
 
-<section class="grid">
+  <!-- JOGADORES -->
+  <section class="jogadores" id="jogadores">
+    <h2>Jogadores Destaque</h2>
 
-<div class="card">
-    <img src="https://images.unsplash.com/photo-1547347298-4074fc3086f0?q=80&w=1200&auto=format&fit=crop" alt="Jogador">
-    <h3>Vinícius Júnior</h3>
-    <p>
-        Posição: Atacante<br>
-        Velocidade explosiva e habilidade impressionante.
-    </p>
-</div>
+    <div class="players">
 
-<div class="card">
-    <img src="https://images.unsplash.com/photo-1517466787929-bc90951d0974?q=80&w=1200&auto=format&fit=crop" alt="Jogador">
-    <h3>Kylian Mbappé</h3>
-    <p>
-        Posição: Atacante<br>
-        Um dos jogadores mais rápidos e decisivos do planeta.
-    </p>
-</div>
+      <div class="player-card">
+        <img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?q=80&w=1000">
+        <h3>Vinicius Jr</h3>
+        <p>Brasil</p>
+        <span>⚽ 18 gols</span>
+      </div>
 
-<div class="card">
-    <img src="https://images.unsplash.com/photo-1508098682722-e99c643e7485?q=80&w=1200&auto=format&fit=crop" alt="Jogador">
-    <h3>Jude Bellingham</h3>
-    <p>
-        Posição: Meio-campo<br>
-        Inteligência tática e liderança em campo.
-    </p>
-</div>
+      <div class="player-card">
+        <img src="https://images.unsplash.com/photo-1517466787929-bc90951d0974?q=80&w=1000">
+        <h3>Mbappé</h3>
+        <p>França</p>
+        <span>⚽ 21 gols</span>
+      </div>
 
-</section>
+      <div class="player-card">
+        <img src="https://images.unsplash.com/photo-1522778119026-d647f0596c20?q=80&w=1000">
+        <h3>Bellingham</h3>
+        <p>Inglaterra</p>
+        <span>⚽ 12 gols</span>
+      </div>
 
-<!-- JOGOS -->
-<h2 class="section-title" id="jogos">📅 Jogos da Copa</h2>
+    </div>
+  </section>
 
-<section class="matches">
+  <!-- JOGOS -->
+  <section class="jogos" id="jogos">
+    <h2>Próximos Jogos</h2>
 
-<div class="match">
-    <div class="team">🇧🇷 Brasil</div>
-    <div class="vs">VS</div>
-    <div class="team">🇦🇷 Argentina</div>
-    <div class="date">15/06/2026</div>
-</div>
+    <div class="match">
 
-<div class="match">
-    <div class="team">🇫🇷 França</div>
-    <div class="vs">VS</div>
-    <div class="team">🏴 Inglaterra</div>
-    <div class="date">18/06/2026</div>
-</div>
+      <div class="team">
+        🇧🇷 Brasil
+      </div>
 
-<div class="match">
-    <div class="team">🇵🇹 Portugal</div>
-    <div class="vs">VS</div>
-    <div class="team">🇩🇪 Alemanha</div>
-    <div class="date">20/06/2026</div>
-</div>
+      <div class="score">
+        VS
+      </div>
 
-</section>
+      <div class="team">
+        🇦🇷 Argentina
+      </div>
 
-<!-- ESTATISTICAS -->
-<h2 class="section-title" id="stats">📊 Estatísticas</h2>
+    </div>
 
-<section class="stats">
+    <button onclick="simularJogo()" class="btn">
+      Simular Partida
+    </button>
 
-<div class="stat-box">
-    <h2>48</h2>
-    <p>Seleções</p>
-</div>
+    <div id="resultado"></div>
+  </section>
 
-<div class="stat-box">
-    <h2>104</h2>
-    <p>Jogos</p>
-</div>
+  <!-- RANKING -->
+  <section class="ranking" id="ranking">
+    <h2>Ranking FIFA</h2>
 
-<div class="stat-box">
-    <h2>16</h2>
-    <p>Cidades-Sede</p>
-</div>
+    <table>
+      <tr>
+        <th>#</th>
+        <th>Seleção</th>
+        <th>Pontos</th>
+      </tr>
 
-<div class="stat-box">
-    <h2>3</h2>
-    <p>Países-Sede</p>
-</div>
+      <tr>
+        <td>1</td>
+        <td>Argentina</td>
+        <td>1850</td>
+      </tr>
 
-</section>
+      <tr>
+        <td>2</td>
+        <td>França</td>
+        <td>1830</td>
+      </tr>
 
-<footer>
-    <h2>⚽ WORLD CUP 2026 | 3D FUTURE</h2>
-    <p>
-        Site futurista desenvolvido em HTML, CSS e JavaScript.
-    </p>
-</footer>
+      <tr>
+        <td>3</td>
+        <td>Brasil</td>
+        <td>1810</td>
+      </tr>
 
-<script>
-// EFEITO 3D NO MOUSE
-const cards = document.querySelectorAll('.card');
+    </table>
+  </section>
 
-cards.forEach(card => {
+  <!-- GALERIA -->
+  <section class="galeria">
+    <h2>Galeria Mundial</h2>
 
-    card.addEventListener('mousemove', e => {
+    <div class="gallery">
 
-        const rect = card.getBoundingClientRect();
+      <img src="https://images.unsplash.com/photo-1543357480-c60d40007a3f?q=80&w=1000">
+      <img src="https://images.unsplash.com/photo-1577223625816-7546f13df25d?q=80&w=1000">
+      <img src="https://images.unsplash.com/photo-1518604666860-9ed391f76460?q=80&w=1000">
 
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
+    </div>
+  </section>
 
-        const centerX = rect.width / 2;
-        const centerY = rect.height / 2;
+  <!-- NOTÍCIAS -->
+  <section class="noticias" id="noticias">
+    <h2>Últimas Notícias</h2>
 
-        const rotateX = ((y - centerY) / 12);
-        const rotateY = ((centerX - x) / 12);
+    <div class="news-container">
 
-        card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.05)`;
+      <div class="news-card">
+        <h3>Brasil divulga convocação oficial</h3>
+        <p>Técnico anuncia lista final para a Copa 2026.</p>
+      </div>
 
-    });
+      <div class="news-card">
+        <h3>Estádios da Copa impressionam</h3>
+        <p>Estruturas futuristas serão utilizadas no torneio.</p>
+      </div>
 
-    card.addEventListener('mouseleave', () => {
-        card.style.transform = 'rotateX(0) rotateY(0) scale(1)';
-    });
+      <div class="news-card">
+        <h3>Nova tecnologia no VAR</h3>
+        <p>FIFA confirma inteligência artificial nas análises.</p>
+      </div>
 
-});
+    </div>
+  </section>
 
-// EFEITO SCROLL SUAVE
-const links = document.querySelectorAll('nav a');
+  <!-- RODAPÉ -->
+  <footer>
+    <p>© 2026 FIFA World Cup Experience</p>
+  </footer>
 
-links.forEach(link => {
-
-    link.addEventListener('click', e => {
-        e.preventDefault();
-
-        const id = link.getAttribute('href');
-
-        document.querySelector(id).scrollIntoView({
-            behavior:'smooth'
-        });
-    });
-
-});
-</script>
+  <script src="script.js"></script>
 
 </body>
 </html>
-```
-
-# 📡 ESPN STYLE EXPERIENCE
-
-```html
-<!-- BARRA ESPN -->
-<div class="espn-topbar">
-    <div class="live-indicator"></div>
-    <span>AO VIVO • COBERTURA COMPLETA DA COPA 2026</span>
-</div>
-
-<style>
-.espn-topbar{
-    width:100%;
-    background:#c40000;
-    color:white;
-    padding:12px 30px;
-    display:flex;
-    align-items:center;
-    gap:12px;
-    font-weight:700;
-    letter-spacing:1px;
-    position:fixed;
-    top:0;
-    left:0;
-    z-index:9999;
-    box-shadow:0 4px 15px rgba(0,0,0,0.4);
-}
-
-.live-indicator{
-    width:14px;
-    height:14px;
-    background:#00ff6a;
-    border-radius:50%;
-    animation:blink 1s infinite;
-}
-
-@keyframes blink{
-0%{opacity:1}
-50%{opacity:0.3}
-100%{opacity:1}
-}
-
-.scoreboard{
-    width:90%;
-    margin:40px auto;
-    background:linear-gradient(145deg,#101010,#1f1f1f);
-    border-radius:25px;
-    padding:30px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    border:2px solid #c40000;
-    box-shadow:0 0 25px rgba(196,0,0,0.4);
-}
-
-.team-box{
-    text-align:center;
-}
-
-.team-box h2{
-    font-size:2rem;
-}
-
-.score-number{
-    font-size:5rem;
-    font-weight:900;
-    color:#ffffff;
-}
-
-.match-status{
-    background:#c40000;
-    padding:10px 20px;
-    border-radius:50px;
-    font-weight:700;
-}
-
-.news-panel{
-    width:90%;
-    margin:auto;
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-    gap:25px;
-}
-
-.news-card{
-    background:#111827;
-    border-left:5px solid #c40000;
-    padding:25px;
-    border-radius:20px;
-    transition:0.4s;
-}
-
-.news-card:hover{
-    transform:translateY(-8px);
-}
-
-.news-card h3{
-    color:#ffffff;
-    margin-bottom:12px;
-}
-
-.news-card p{
-    color:#d0d0d0;
-}
-
-.analise-box{
-    width:90%;
-    margin:50px auto;
-    background:rgba(255,255,255,0.05);
-    border-radius:25px;
-    padding:35px;
-    border:1px solid rgba(255,255,255,0.1);
-}
-
-.analise-box h2{
-    color:#ff2e2e;
-    margin-bottom:20px;
-}
-
-.tabela-classificacao{
-    width:90%;
-    margin:40px auto;
-    overflow:auto;
-}
-
-table{
-    width:100%;
-    border-collapse:collapse;
-    background:#111827;
-    border-radius:20px;
-    overflow:hidden;
-}
-
-table th{
-    background:#c40000;
-    color:white;
-    padding:18px;
-}
-
-table td{
-    padding:16px;
-    border-bottom:1px solid rgba(255,255,255,0.08);
-    text-align:center;
-}
-
-table tr:hover{
-    background:rgba(255,255,255,0.04);
-}
-</style>
-
-<!-- PLACAR ESPN -->
-<section class="scoreboard">
-
-<div class="team-box">
-    <h2>🇧🇷 Brasil</h2>
-</div>
-
-<div>
-    <div class="score-number">2 x 1</div>
-    <div class="match-status">AO VIVO</div>
-</div>
-
-<div class="team-box">
-    <h2>🇦🇷 Argentina</h2>
-</div>
-
-</section>
-
-<!-- ÚLTIMAS NOTÍCIAS -->
-<h2 class="section-title">📰 Últimas Notícias</h2>
-
-<section class="news-panel">
-
-<div class="news-card">
-    <h3>Brasil confirma convocação oficial</h3>
-    <p>
-        Comissão técnica divulga lista final para a Copa do Mundo 2026.
-    </p>
-</div>
-
-<div class="news-card">
-    <h3>Mbappé lidera estatísticas</h3>
-    <p>
-        Atacante francês é destaque em velocidade e finalizações.
-    </p>
-</div>
-
-<div class="news-card">
-    <h3>Nova tecnologia nos estádios</h3>
-    <p>
-        Copa 2026 terá inteligência artificial e replay holográfico.
-    </p>
-</div>
-
-</section>
-
-<!-- ANALISE ESPN -->
-<section class="analise-box">
-
-<h2>🎙️ Análise Técnica</h2>
-
-<p>
-A Seleção Brasileira chega como uma das favoritas da competição.
-Com jogadores rápidos pelos lados e um meio-campo técnico,
-a equipe apresenta grande intensidade ofensiva.
-</p>
-
-</section>
-
-<!-- TABELA -->
-<section class="tabela-classificacao">
-<table>
-<tr>
-<th>Seleção</th>
-<th>Pontos</th>
-<th>Vitórias</th>
-<th>Gols</th>
-</tr>
-
-<tr>
-<td>🇧🇷 Brasil</td>
-<td>9</td>
-<td>3</td>
-<td>8</td>
-</tr>
-
-<tr>
-<td>🇫🇷 França</td>
-<td>7</td>
-<td>2</td>
-<td>6</td>
-</tr>
-
-<tr>
-<td>🇦🇷 Argentina</td>
-<td>6</td>
-<td>2</td>
-<td>5</td>
-</tr>
-
-</table>
-</section>
-```
-
-# 📺 RECURSOS ESPN STYLE
-
-✅ Placar estilo transmissão ESPN
-✅ Barra AO VIVO profissional
-✅ Notícias esportivas
-✅ Painel de análise técnica
-✅ Tabela de classificação
-✅ Layout jornalístico premium
-✅ Interface moderna esportiva
-✅ Visual transmissão televisiva
-✅ Cobertura completa da Copa
-✅ Efeitos profissionais de broadcast
-
-# 🛸 RECURSOS ULTRA
-
-✅ Sistema visual ULTRA FUTURE
-✅ Interface estilo FIFA + EA SPORTS FC
-✅ Efeito Glassmorphism
-✅ Neon Cyberpunk
-✅ Cards 3D avançados
-✅ Hover holográfico
-✅ Fundo animado futurista
-✅ Painel de estatísticas premium
-✅ Jogadores convocados
-✅ Escalações modernas
-✅ Jogos da Copa
-✅ Layout responsivo profissional
-✅ JavaScript avançado
-✅ Experiência gamer premium
-✅ Animações cinematográficas
-✅ Menu fixo profissional
-✅ Design de nível profissional
-
-# ⚡ MELHORIAS ULTRA ADICIONAIS
-
-```html
-<!-- PARTICULAS FUTURISTAS -->
-<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-
-<div id="particles-js"></div>
-
-<style>
-#particles-js{
-position:fixed;
-width:100%;
-height:100%;
-top:0;
-left:0;
-z-index:-2;
-}
-
-.cyber-title{
-font-size:6rem;
-font-weight:900;
-text-transform:uppercase;
-background:linear-gradient(90deg,#00f7ff,#8c52ff,#00f7ff);
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
-animation:shine 6s linear infinite;
-background-size:300%;
-}
-
-@keyframes shine{
-0%{background-position:0%}
-100%{background-position:300%}
-}
-
-.hologram{
-position:relative;
-overflow:hidden;
-}
-
-.hologram::before{
-content:'';
-position:absolute;
-top:-100%;
-left:-100%;
-width:300%;
-height:300%;
-background:linear-gradient(
-45deg,
-transparent,
-rgba(255,255,255,0.1),
-transparent
-);
-transform:rotate(25deg);
-animation:holo 6s linear infinite;
-}
-
-@keyframes holo{
-0%{transform:translateX(-100%) rotate(25deg)}
-100%{transform:translateX(100%) rotate(25deg)}
-}
-
-.live-score{
-background:linear-gradient(90deg,#ff004c,#ff5e00);
-padding:15px 30px;
-border-radius:50px;
-font-weight:700;
-box-shadow:0 0 20px rgba(255,0,76,0.5);
-animation:pulse 2s infinite;
-}
-
-@keyframes pulse{
-0%{transform:scale(1)}
-50%{transform:scale(1.05)}
-100%{transform:scale(1)}
-}
-
-.player-rating{
-margin-top:15px;
-height:10px;
-background:#111;
-border-radius:50px;
-overflow:hidden;
-}
-
-.player-rating span{
-display:block;
-height:100%;
-width:95%;
-background:linear-gradient(90deg,#00f7ff,#8c52ff);
-}
-</style>
-
-<script>
-particlesJS('particles-js', {
-particles: {
-number: { value: 120 },
-color: { value: '#00f7ff' },
-shape: { type: 'circle' },
-opacity: { value: 0.5 },
-size: { value: 3 },
-move: {
-enable: true,
-speed: 2
-}
-}
-});
-</script>
-
