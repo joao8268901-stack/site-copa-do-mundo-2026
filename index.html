@@ -1,193 +1,59 @@
-<!-- ====================================== -->
-<!-- ADICIONE ESTE BLOCO COMPLETO DENTRO DA -->
-<!-- SEÇÃO <section id="convocacao"> -->
-<!-- SUBSTITUA A LISTA ANTIGA DE JOGADORES -->
-<!-- ====================================== -->
+/* ====================================== */
+/* TABELA DOS GRUPOS */
+/* ====================================== */
 
-<div class="players">
+.groups-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
+    gap:30px;
+}
 
-<!-- GOLEIROS -->
+.group-card{
+    background:#10172a;
+    border-radius:20px;
+    padding:25px;
+    box-shadow:0 0 20px rgba(0,255,136,0.15);
+    transition:0.4s;
+}
 
-<div class="player-card">
-<img src="https://upload.wikimedia.org/wikipedia/commons/2/2e/Alisson_Becker_2018.jpg">
-<div class="player-info">
-<h3>Alisson</h3>
-<p>Goleiro • Liverpool</p>
-</div>
-</div>
+.group-card:hover{
+    transform:translateY(-8px);
+}
 
-<div class="player-card">
-<img src="https://upload.wikimedia.org/wikipedia/commons/3/36/Ederson_2018.jpg">
-<div class="player-info">
-<h3>Ederson</h3>
-<p>Goleiro • Fenerbahçe</p>
-</div>
-</div>
+.group-card h3{
+    color:#00ff88;
+    margin-bottom:20px;
+    text-align:center;
+    font-size:28px;
+}
 
-<div class="player-card">
-<img src="https://upload.wikimedia.org/wikipedia/commons/f/f8/Weverton_2022.jpg">
-<div class="player-info">
-<h3>Weverton</h3>
-<p>Goleiro • Grêmio</p>
-</div>
-</div>
+table{
+    width:100%;
+    border-collapse:collapse;
+}
 
-<!-- DEFENSORES -->
+table th{
+    background:#00ff88;
+    color:black;
+    padding:12px;
+    font-size:14px;
+}
 
-<div class="player-card">
-<img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Alex_Sandro_2018.jpg">
-<div class="player-info">
-<h3>Alex Sandro</h3>
-<p>Lateral • Flamengo</p>
-</div>
-</div>
+table td{
+    padding:12px;
+    border-bottom:1px solid rgba(255,255,255,0.1);
+    text-align:center;
+}
 
-<div class="player-card">
-<img src="https://upload.wikimedia.org/wikipedia/commons/4/4f/Bremer_2022.jpg">
-<div class="player-info">
-<h3>Bremer</h3>
-<p>Zagueiro • Juventus</p>
-</div>
-</div>
+table tr:hover{
+    background:#1b2440;
+}
 
-<div class="player-card">
-<img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Danilo_2018.jpg">
-<div class="player-info">
-<h3>Danilo</h3>
-<p>Lateral • Flamengo</p>
-</div>
-</div>
+.brasil{
+    background:rgba(0,255,136,0.15);
+    font-weight:bold;
+}
 
-<div class="player-card">
-<img src="https://upload.wikimedia.org/wikipedia/commons/c/c0/Douglas_Santos_2018.jpg">
-<div class="player-info">
-<h3>Douglas Santos</h3>
-<p>Lateral • Zenit</p>
-</div>
-</div>
-
-<div class="player-card">
-<img src="https://upload.wikimedia.org/wikipedia/commons/5/58/Gabriel_Magalhaes_2022.jpg">
-<div class="player-info">
-<h3>Gabriel Magalhães</h3>
-<p>Zagueiro • Arsenal</p>
-</div>
-</div>
-
-<div class="player-card">
-<img src="https://upload.wikimedia.org/wikipedia/commons/2/2d/Ibanez_2023.jpg">
-<div class="player-info">
-<h3>Ibañez</h3>
-<p>Zagueiro • Al Ahli</p>
-</div>
-</div>
-
-<div class="player-card">
-<img src="https://upload.wikimedia.org/wikipedia/commons/f/f9/Leo_Pereira_2023.jpg">
-<div class="player-info">
-<h3>Léo Pereira</h3>
-<p>Zagueiro • Flamengo</p>
-</div>
-</div>
-
-<div class="player-card">
-<img src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Marquinhos_2022.jpg">
-<div class="player-info">
-<h3>Marquinhos</h3>
-<p>Zagueiro • PSG</p>
-</div>
-</div>
-
-<!-- MEIO -->
-
-<div class="player-card">
-<img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Bruno_Guimaraes_2022.jpg">
-<div class="player-info">
-<h3>Bruno Guimarães</h3>
-<p>Meio-campo • Newcastle</p>
-</div>
-</div>
-
-<div class="player-card">
-<img src="https://upload.wikimedia.org/wikipedia/commons/7/73/Casemiro_2022.jpg">
-<div class="player-info">
-<h3>Casemiro</h3>
-<p>Volante • Manchester United</p>
-</div>
-</div>
-
-<div class="player-card">
-<img src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Fabinho_2018.jpg">
-<div class="player-info">
-<h3>Fabinho</h3>
-<p>Volante • Al-Ittihad</p>
-</div>
-</div>
-
-<div class="player-card">
-<img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Lucas_Paqueta_2022.jpg">
-<div class="player-info">
-<h3>Lucas Paquetá</h3>
-<p>Meia • West Ham</p>
-</div>
-</div>
-
-<!-- ATACANTES -->
-
-<div class="player-card">
-<img src="https://upload.wikimedia.org/wikipedia/commons/7/71/Endrick_2024.jpg">
-<div class="player-info">
-<h3>Endrick</h3>
-<p>Atacante • Real Madrid</p>
-</div>
-</div>
-
-<div class="player-card">
-<img src="https://upload.wikimedia.org/wikipedia/commons/e/e5/Gabriel_Martinelli_2022.jpg">
-<div class="player-info">
-<h3>Gabriel Martinelli</h3>
-<p>Atacante • Arsenal</p>
-</div>
-</div>
-
-<div class="player-card">
-<img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Luiz_Henrique_2024.jpg">
-<div class="player-info">
-<h3>Luiz Henrique</h3>
-<p>Ponta • Botafogo</p>
-</div>
-</div>
-
-<div class="player-card">
-<img src="https://upload.wikimedia.org/wikipedia/commons/0/07/Matheus_Cunha_2022.jpg">
-<div class="player-info">
-<h3>Matheus Cunha</h3>
-<p>Atacante • Wolverhampton</p>
-</div>
-</div>
-
-<div class="player-card">
-<img src="https://upload.wikimedia.org/wikipedia/commons/7/70/Neymar_2022.jpg">
-<div class="player-info">
-<h3>Neymar</h3>
-<p>Camisa 10 • Santos</p>
-</div>
-</div>
-
-<div class="player-card">
-<img src="https://upload.wikimedia.org/wikipedia/commons/2/21/Raphinha_2022.jpg">
-<div class="player-info">
-<h3>Raphinha</h3>
-<p>Ponta • Barcelona</p>
-</div>
-</div>
-
-<div class="player-card">
-<img src="https://upload.wikimedia.org/wikipedia/commons/4/4f/Vinicius_Junior_2022.jpg">
-<div class="player-info">
-<h3>Vinícius Júnior</h3>
-<p>Ponta • Real Madrid</p>
-</div>
-</div>
-
-</div>
+.destaque-brasil{
+    border:2px solid #00ff88;
+}
