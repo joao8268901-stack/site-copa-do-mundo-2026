@@ -1,219 +1,452 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Copa do Mundo 2026</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="stylesheet" href="style.css">
+<title>Copa do Mundo 2026</title>
 
-  <!-- Fonte -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-  <!-- Ícones -->
-  <link rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#050816;
+    color:white;
+    overflow-x:hidden;
+}
+
+/* MENU */
+
+header{
+    position:fixed;
+    width:100%;
+    top:0;
+    z-index:1000;
+    background:rgba(0,0,0,0.7);
+    backdrop-filter:blur(10px);
+}
+
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 8%;
+}
+
+.logo{
+    font-size:28px;
+    font-weight:700;
+    color:#00ff88;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:25px;
+}
+
+nav ul li a{
+    color:white;
+    text-decoration:none;
+    transition:0.3s;
+}
+
+nav ul li a:hover{
+    color:#00ff88;
+}
+
+/* HERO */
+
+.hero{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    background:
+    linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.8)),
+    url('https://images.unsplash.com/photo-1579952363873-27f3bade9f55?q=80&w=1600') center/cover;
+}
+
+.hero-content h1{
+    font-size:70px;
+    margin-bottom:20px;
+    animation:glow 2s infinite alternate;
+}
+
+.hero-content p{
+    font-size:22px;
+    margin-bottom:30px;
+}
+
+.btn{
+    padding:15px 35px;
+    background:#00ff88;
+    color:black;
+    border:none;
+    border-radius:30px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.btn:hover{
+    transform:scale(1.1);
+}
+
+@keyframes glow{
+    from{
+        text-shadow:0 0 10px #00ff88;
+    }
+    to{
+        text-shadow:0 0 30px #00ff88;
+    }
+}
+
+/* SEÇÕES */
+
+section{
+    padding:120px 8%;
+}
+
+.section-title{
+    font-size:42px;
+    margin-bottom:40px;
+    color:#00ff88;
+    text-align:center;
+}
+
+/* CONVOCAÇÃO */
+
+.players{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:25px;
+}
+
+.player-card{
+    background:#10172a;
+    border-radius:20px;
+    overflow:hidden;
+    transition:0.4s;
+    box-shadow:0 0 15px rgba(0,255,136,0.2);
+}
+
+.player-card:hover{
+    transform:translateY(-10px);
+}
+
+.player-card img{
+    width:100%;
+    height:250px;
+    object-fit:cover;
+}
+
+.player-info{
+    padding:20px;
+}
+
+.player-info h3{
+    margin-bottom:10px;
+}
+
+/* JOGOS */
+
+.games{
+    display:grid;
+    gap:20px;
+}
+
+.game{
+    background:#10172a;
+    padding:20px;
+    border-left:5px solid #00ff88;
+    border-radius:15px;
+}
+
+/* PALPITES */
+
+.bet-box{
+    background:#10172a;
+    padding:30px;
+    border-radius:20px;
+    max-width:600px;
+    margin:auto;
+}
+
+.bet-box input,
+.bet-box select{
+    width:100%;
+    padding:15px;
+    margin-top:15px;
+    border:none;
+    border-radius:10px;
+    background:#1b2440;
+    color:white;
+}
+
+.bet-box button{
+    width:100%;
+    margin-top:20px;
+}
+
+/* CONTADOR */
+
+.countdown{
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    flex-wrap:wrap;
+}
+
+.time-box{
+    background:#10172a;
+    padding:30px;
+    border-radius:20px;
+    width:150px;
+    text-align:center;
+}
+
+.time-box h2{
+    font-size:45px;
+    color:#00ff88;
+}
+
+/* FOOTER */
+
+footer{
+    background:black;
+    text-align:center;
+    padding:30px;
+    margin-top:50px;
+}
+
+/* RESPONSIVO */
+
+@media(max-width:768px){
+
+.hero-content h1{
+    font-size:45px;
+}
+
+nav ul{
+    display:none;
+}
+
+}
+
+</style>
 </head>
-
 <body>
 
-  <!-- MENU -->
-  <header class="header">
-    <div class="logo">
-      <i class="fa-solid fa-futbol"></i>
-      FIFA 2026
-    </div>
+<header>
+<nav>
+<div class="logo">COPA 2026</div>
 
-    <nav>
-      <ul class="menu">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#selecoes">Seleções</a></li>
-        <li><a href="#jogadores">Jogadores</a></li>
-        <li><a href="#jogos">Jogos</a></li>
-        <li><a href="#ranking">Ranking</a></li>
-        <li><a href="#noticias">Notícias</a></li>
-      </ul>
-    </nav>
-  </header>
+<ul>
+<li><a href="#inicio">Início</a></li>
+<li><a href="#convocacao">Convocação</a></li>
+<li><a href="#jogos">Jogos</a></li>
+<li><a href="#palpites">Palpites</a></li>
+</ul>
+</nav>
+</header>
 
-  <!-- HERO -->
-  <section class="hero" id="home">
-    <div class="overlay"></div>
+<!-- HERO -->
 
-    <div class="hero-content">
-      <h1>COPA DO MUNDO 2026</h1>
-      <p>O maior espetáculo do futebol mundial em uma experiência digital futurista.</p>
+<section class="hero" id="inicio">
+<div class="hero-content">
 
-      <button class="btn">Explorar Campeonato</button>
-    </div>
-  </section>
+<h1>FIFA WORLD CUP 2026</h1>
 
-  <!-- SELEÇÕES -->
-  <section class="selecoes" id="selecoes">
-    <h2>Seleções Classificadas</h2>
+<p>Brasil rumo ao Hexa 🏆</p>
 
-    <div class="cards">
+<button class="btn" onclick="alert('Bem-vindo à Copa 2026!')">
+Explorar
+</button>
 
-      <div class="card">
-        <img src="https://flagcdn.com/w320/br.png">
-        <h3>Brasil</h3>
-        <p>5 títulos mundiais</p>
-      </div>
+</div>
+</section>
 
-      <div class="card">
-        <img src="https://flagcdn.com/w320/ar.png">
-        <h3>Argentina</h3>
-        <p>Atual campeã mundial</p>
-      </div>
+<!-- CONTAGEM -->
 
-      <div class="card">
-        <img src="https://flagcdn.com/w320/fr.png">
-        <h3>França</h3>
-        <p>Potência europeia</p>
-      </div>
+<section>
 
-      <div class="card">
-        <img src="https://flagcdn.com/w320/pt.png">
-        <h3>Portugal</h3>
-        <p>Nova geração forte</p>
-      </div>
+<h2 class="section-title">Contagem Regressiva</h2>
 
-    </div>
-  </section>
+<div class="countdown">
 
-  <!-- JOGADORES -->
-  <section class="jogadores" id="jogadores">
-    <h2>Jogadores Destaque</h2>
+<div class="time-box">
+<h2 id="days">0</h2>
+<p>Dias</p>
+</div>
 
-    <div class="players">
+<div class="time-box">
+<h2 id="hours">0</h2>
+<p>Horas</p>
+</div>
 
-      <div class="player-card">
-        <img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?q=80&w=1000">
-        <h3>Vinicius Jr</h3>
-        <p>Brasil</p>
-        <span>⚽ 18 gols</span>
-      </div>
+<div class="time-box">
+<h2 id="minutes">0</h2>
+<p>Minutos</p>
+</div>
 
-      <div class="player-card">
-        <img src="https://images.unsplash.com/photo-1517466787929-bc90951d0974?q=80&w=1000">
-        <h3>Mbappé</h3>
-        <p>França</p>
-        <span>⚽ 21 gols</span>
-      </div>
+<div class="time-box">
+<h2 id="seconds">0</h2>
+<p>Segundos</p>
+</div>
 
-      <div class="player-card">
-        <img src="https://images.unsplash.com/photo-1522778119026-d647f0596c20?q=80&w=1000">
-        <h3>Bellingham</h3>
-        <p>Inglaterra</p>
-        <span>⚽ 12 gols</span>
-      </div>
+</div>
 
-    </div>
-  </section>
+</section>
 
-  <!-- JOGOS -->
-  <section class="jogos" id="jogos">
-    <h2>Próximos Jogos</h2>
+<!-- CONVOCAÇÃO -->
 
-    <div class="match">
+<section id="convocacao">
 
-      <div class="team">
-        🇧🇷 Brasil
-      </div>
+<h2 class="section-title">Convocação do Brasil 🇧🇷</h2>
 
-      <div class="score">
-        VS
-      </div>
+<div class="players">
 
-      <div class="team">
-        🇦🇷 Argentina
-      </div>
+<div class="player-card">
+<img src="https://images.unsplash.com/photo-1517466787929-bc90951d0974?q=80&w=1200">
+<div class="player-info">
+<h3>Vinicius Jr</h3>
+<p>Atacante</p>
+</div>
+</div>
 
-    </div>
+<div class="player-card">
+<img src="https://images.unsplash.com/photo-1546519638-68e109498ffc?q=80&w=1200">
+<div class="player-info">
+<h3>Rodrygo</h3>
+<p>Atacante</p>
+</div>
+</div>
 
-    <button onclick="simularJogo()" class="btn">
-      Simular Partida
-    </button>
+<div class="player-card">
+<img src="https://images.unsplash.com/photo-1511886929837-354d827aae26?q=80&w=1200">
+<div class="player-info">
+<h3>Endrick</h3>
+<p>Centroavante</p>
+</div>
+</div>
 
-    <div id="resultado"></div>
-  </section>
+<div class="player-card">
+<img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?q=80&w=1200">
+<div class="player-info">
+<h3>Alisson</h3>
+<p>Goleiro</p>
+</div>
+</div>
 
-  <!-- RANKING -->
-  <section class="ranking" id="ranking">
-    <h2>Ranking FIFA</h2>
+</div>
 
-    <table>
-      <tr>
-        <th>#</th>
-        <th>Seleção</th>
-        <th>Pontos</th>
-      </tr>
+</section>
 
-      <tr>
-        <td>1</td>
-        <td>Argentina</td>
-        <td>1850</td>
-      </tr>
+<!-- JOGOS -->
 
-      <tr>
-        <td>2</td>
-        <td>França</td>
-        <td>1830</td>
-      </tr>
+<section id="jogos">
 
-      <tr>
-        <td>3</td>
-        <td>Brasil</td>
-        <td>1810</td>
-      </tr>
+<h2 class="section-title">Jogos do Brasil</h2>
 
-    </table>
-  </section>
+<div class="games">
 
-  <!-- GALERIA -->
-  <section class="galeria">
-    <h2>Galeria Mundial</h2>
+<div class="game">
+<h3>Brasil x Marrocos</h3>
+<p>17 de Junho de 2026</p>
+</div>
 
-    <div class="gallery">
+<div class="game">
+<h3>Brasil x Haiti</h3>
+<p>21 de Junho de 2026</p>
+</div>
 
-      <img src="https://images.unsplash.com/photo-1543357480-c60d40007a3f?q=80&w=1000">
-      <img src="https://images.unsplash.com/photo-1577223625816-7546f13df25d?q=80&w=1000">
-      <img src="https://images.unsplash.com/photo-1518604666860-9ed391f76460?q=80&w=1000">
+<div class="game">
+<h3>Brasil x Escócia</h3>
+<p>26 de Junho de 2026</p>
+</div>
 
-    </div>
-  </section>
+</div>
 
-  <!-- NOTÍCIAS -->
-  <section class="noticias" id="noticias">
-    <h2>Últimas Notícias</h2>
+</section>
 
-    <div class="news-container">
+<!-- PALPITES -->
 
-      <div class="news-card">
-        <h3>Brasil divulga convocação oficial</h3>
-        <p>Técnico anuncia lista final para a Copa 2026.</p>
-      </div>
+<section id="palpites">
 
-      <div class="news-card">
-        <h3>Estádios da Copa impressionam</h3>
-        <p>Estruturas futuristas serão utilizadas no torneio.</p>
-      </div>
+<h2 class="section-title">Palpites dos Jogos</h2>
 
-      <div class="news-card">
-        <h3>Nova tecnologia no VAR</h3>
-        <p>FIFA confirma inteligência artificial nas análises.</p>
-      </div>
+<div class="bet-box">
 
-    </div>
-  </section>
+<input type="text" placeholder="Seu nome">
 
-  <!-- RODAPÉ -->
-  <footer>
-    <p>© 2026 FIFA World Cup Experience</p>
-  </footer>
+<select>
+<option>Brasil x Marrocos</option>
+<option>Brasil x Haiti</option>
+<option>Brasil x Escócia</option>
+</select>
 
-  <script src="script.js"></script>
+<input type="text" placeholder="Digite seu palpite">
+
+<button class="btn" onclick="enviarPalpite()">
+Enviar Palpite
+</button>
+
+</div>
+
+</section>
+
+<footer>
+
+<p>Site Copa do Mundo 2026 © 2026</p>
+
+</footer>
+
+<script>
+
+/* CONTAGEM */
+
+const targetDate = new Date("Jun 11, 2026 00:00:00").getTime();
+
+setInterval(()=>{
+
+const now = new Date().getTime();
+
+const distance = targetDate - now;
+
+const days = Math.floor(distance / (1000*60*60*24));
+
+const hours = Math.floor((distance % (1000*60*60*24)) / (1000*60*60));
+
+const minutes = Math.floor((distance % (1000*60*60)) / (1000*60));
+
+const seconds = Math.floor((distance % (1000*60)) / 1000);
+
+document.getElementById("days").innerHTML = days;
+document.getElementById("hours").innerHTML = hours;
+document.getElementById("minutes").innerHTML = minutes;
+document.getElementById("seconds").innerHTML = seconds;
+
+},1000);
+
+/* PALPITE */
+
+function enviarPalpite(){
+
+alert("Palpite enviado com sucesso!");
+
+}
+
+</script>
 
 </body>
 </html>
