@@ -677,4 +677,114 @@ alert("Palpite enviado com sucesso!");
 
 </div>
 </section>
+    <!-- ================================= -->
+<!-- ÁREA DE PALPITES DOS TORCEDORES -->
+<!-- ================================= -->
+
+<section id="palpites">
+
+<h2 class="section-title">Palpites dos Torcedores 🔥</h2>
+
+<div class="bet-box">
+
+<input type="text" id="nome" placeholder="Seu nome">
+
+<select id="jogo">
+<option>Brasil x Marrocos</option>
+<option>Brasil x Haiti</option>
+<option>Brasil x Escócia</option>
+</select>
+
+<input type="text" id="palpite" placeholder="Ex: Brasil 3 x 1 Marrocos">
+
+<button class="btn" onclick="enviarPalpite()">
+Enviar Palpite
+</button>
+
+</div>
+
+<!-- LISTA DE PALPITES -->
+
+<div class="palpites-area">
+
+<h2 class="section-title">Mural da Torcida 🇧🇷</h2>
+
+<div id="listaPalpites"></div>
+
+</div>
+
+</section>
+    /* ========================= */
+/* MURAL DE PALPITES */
+/* ========================= */
+
+.palpites-area{
+    margin-top:60px;
+}
+
+.palpite-card{
+    background:#10172a;
+    border-left:5px solid #00ff88;
+    padding:20px;
+    border-radius:15px;
+    margin-bottom:20px;
+    animation:fadeIn 0.5s ease;
+    box-shadow:0 0 15px rgba(0,255,136,0.2);
+}
+
+.palpite-card h3{
+    color:#00ff88;
+    margin-bottom:10px;
+}
+
+.palpite-card p{
+    margin:5px 0;
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+    /* ========================= */
+/* SISTEMA DE PALPITES */
+/* ========================= */
+
+function enviarPalpite(){
+
+    const nome = document.getElementById("nome").value;
+    const jogo = document.getElementById("jogo").value;
+    const palpite = document.getElementById("palpite").value;
+
+    if(nome === "" || palpite === ""){
+        alert("Preencha todos os campos!");
+        return;
+    }
+
+    const lista = document.getElementById("listaPalpites");
+
+    const card = document.createElement("div");
+    card.classList.add("palpite-card");
+
+    card.innerHTML = `
+        <h3>${nome}</h3>
+        <p><strong>Jogo:</strong> ${jogo}</p>
+        <p><strong>Palpite:</strong> ${palpite}</p>
+    `;
+
+    lista.prepend(card);
+
+    /* LIMPAR CAMPOS */
+
+    document.getElementById("nome").value = "";
+    document.getElementById("palpite").value = "";
+
+    alert("Palpite enviado com sucesso! ⚽");
+}
 </html>
+
