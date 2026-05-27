@@ -1,452 +1,228 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Copa do Mundo 2026</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-<style>
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
-}
-
-body{
-    background:#050816;
-    color:white;
-    overflow-x:hidden;
-}
-
-/* MENU */
-
-header{
-    position:fixed;
-    width:100%;
-    top:0;
-    z-index:1000;
-    background:rgba(0,0,0,0.7);
-    backdrop-filter:blur(10px);
-}
-
-nav{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:20px 8%;
-}
-
-.logo{
-    font-size:28px;
-    font-weight:700;
-    color:#00ff88;
-}
-
-nav ul{
-    display:flex;
-    list-style:none;
-    gap:25px;
-}
-
-nav ul li a{
-    color:white;
-    text-decoration:none;
-    transition:0.3s;
-}
-
-nav ul li a:hover{
-    color:#00ff88;
-}
-
-/* HERO */
-
-.hero{
-    height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    background:
-    linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.8)),
-    url('https://images.unsplash.com/photo-1579952363873-27f3bade9f55?q=80&w=1600') center/cover;
-}
-
-.hero-content h1{
-    font-size:70px;
-    margin-bottom:20px;
-    animation:glow 2s infinite alternate;
-}
-
-.hero-content p{
-    font-size:22px;
-    margin-bottom:30px;
-}
-
-.btn{
-    padding:15px 35px;
-    background:#00ff88;
-    color:black;
-    border:none;
-    border-radius:30px;
-    font-weight:bold;
-    cursor:pointer;
-    transition:0.3s;
-}
-
-.btn:hover{
-    transform:scale(1.1);
-}
-
-@keyframes glow{
-    from{
-        text-shadow:0 0 10px #00ff88;
-    }
-    to{
-        text-shadow:0 0 30px #00ff88;
-    }
-}
-
-/* SEÇÕES */
-
-section{
-    padding:120px 8%;
-}
-
-.section-title{
-    font-size:42px;
-    margin-bottom:40px;
-    color:#00ff88;
-    text-align:center;
-}
-
-/* CONVOCAÇÃO */
-
-.players{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:25px;
-}
-
-.player-card{
-    background:#10172a;
-    border-radius:20px;
-    overflow:hidden;
-    transition:0.4s;
-    box-shadow:0 0 15px rgba(0,255,136,0.2);
-}
-
-.player-card:hover{
-    transform:translateY(-10px);
-}
-
-.player-card img{
-    width:100%;
-    height:250px;
-    object-fit:cover;
-}
-
-.player-info{
-    padding:20px;
-}
-
-.player-info h3{
-    margin-bottom:10px;
-}
-
-/* JOGOS */
-
-.games{
-    display:grid;
-    gap:20px;
-}
-
-.game{
-    background:#10172a;
-    padding:20px;
-    border-left:5px solid #00ff88;
-    border-radius:15px;
-}
-
-/* PALPITES */
-
-.bet-box{
-    background:#10172a;
-    padding:30px;
-    border-radius:20px;
-    max-width:600px;
-    margin:auto;
-}
-
-.bet-box input,
-.bet-box select{
-    width:100%;
-    padding:15px;
-    margin-top:15px;
-    border:none;
-    border-radius:10px;
-    background:#1b2440;
-    color:white;
-}
-
-.bet-box button{
-    width:100%;
-    margin-top:20px;
-}
-
-/* CONTADOR */
-
-.countdown{
-    display:flex;
-    justify-content:center;
-    gap:30px;
-    flex-wrap:wrap;
-}
-
-.time-box{
-    background:#10172a;
-    padding:30px;
-    border-radius:20px;
-    width:150px;
-    text-align:center;
-}
-
-.time-box h2{
-    font-size:45px;
-    color:#00ff88;
-}
-
-/* FOOTER */
-
-footer{
-    background:black;
-    text-align:center;
-    padding:30px;
-    margin-top:50px;
-}
-
-/* RESPONSIVO */
-
-@media(max-width:768px){
-
-.hero-content h1{
-    font-size:45px;
-}
-
-nav ul{
-    display:none;
-}
-
-}
-
-</style>
-</head>
-<body>
-
-<header>
-<nav>
-<div class="logo">COPA 2026</div>
-
-<ul>
-<li><a href="#inicio">Início</a></li>
-<li><a href="#convocacao">Convocação</a></li>
-<li><a href="#jogos">Jogos</a></li>
-<li><a href="#palpites">Palpites</a></li>
-</ul>
-</nav>
-</header>
-
-<!-- HERO -->
-
-<section class="hero" id="inicio">
-<div class="hero-content">
-
-<h1>FIFA WORLD CUP 2026</h1>
-
-<p>Brasil rumo ao Hexa 🏆</p>
-
-<button class="btn" onclick="alert('Bem-vindo à Copa 2026!')">
-Explorar
-</button>
-
-</div>
-</section>
-
-<!-- CONTAGEM -->
-
-<section>
-
-<h2 class="section-title">Contagem Regressiva</h2>
-
-<div class="countdown">
-
-<div class="time-box">
-<h2 id="days">0</h2>
-<p>Dias</p>
-</div>
-
-<div class="time-box">
-<h2 id="hours">0</h2>
-<p>Horas</p>
-</div>
-
-<div class="time-box">
-<h2 id="minutes">0</h2>
-<p>Minutos</p>
-</div>
-
-<div class="time-box">
-<h2 id="seconds">0</h2>
-<p>Segundos</p>
-</div>
-
-</div>
-
-</section>
-
-<!-- CONVOCAÇÃO -->
+<!-- ========================= -->
+<!-- ESCALAÇÃO COMPLETA BRASIL -->
+<!-- ========================= -->
 
 <section id="convocacao">
 
-<h2 class="section-title">Convocação do Brasil 🇧🇷</h2>
+<h2 class="section-title">Convocação Oficial do Brasil 🇧🇷</h2>
 
 <div class="players">
 
-<div class="player-card">
-<img src="https://images.unsplash.com/photo-1517466787929-bc90951d0974?q=80&w=1200">
-<div class="player-info">
-<h3>Vinicius Jr</h3>
-<p>Atacante</p>
-</div>
-</div>
+<!-- GOLEIROS -->
 
 <div class="player-card">
-<img src="https://images.unsplash.com/photo-1546519638-68e109498ffc?q=80&w=1200">
-<div class="player-info">
-<h3>Rodrygo</h3>
-<p>Atacante</p>
-</div>
-</div>
-
-<div class="player-card">
-<img src="https://images.unsplash.com/photo-1511886929837-354d827aae26?q=80&w=1200">
-<div class="player-info">
-<h3>Endrick</h3>
-<p>Centroavante</p>
-</div>
-</div>
-
-<div class="player-card">
-<img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?q=80&w=1200">
+<img src="https://upload.wikimedia.org/wikipedia/commons/2/2e/Alisson_Becker_2018.jpg">
 <div class="player-info">
 <h3>Alisson</h3>
-<p>Goleiro</p>
+<p>Goleiro • Liverpool</p>
+</div>
+</div>
+
+<div class="player-card">
+<img src="https://upload.wikimedia.org/wikipedia/commons/3/36/Ederson_2018.jpg">
+<div class="player-info">
+<h3>Ederson</h3>
+<p>Goleiro • Fenerbahçe</p>
+</div>
+</div>
+
+<div class="player-card">
+<img src="https://upload.wikimedia.org/wikipedia/commons/f/f8/Weverton_2022.jpg">
+<div class="player-info">
+<h3>Weverton</h3>
+<p>Goleiro • Grêmio</p>
+</div>
+</div>
+
+<!-- DEFENSORES -->
+
+<div class="player-card">
+<img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Alex_Sandro_2018.jpg">
+<div class="player-info">
+<h3>Alex Sandro</h3>
+<p>Lateral • Flamengo</p>
+</div>
+</div>
+
+<div class="player-card">
+<img src="https://upload.wikimedia.org/wikipedia/commons/4/4f/Bremer_2022.jpg">
+<div class="player-info">
+<h3>Bremer</h3>
+<p>Zagueiro • Juventus</p>
+</div>
+</div>
+
+<div class="player-card">
+<img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Danilo_2018.jpg">
+<div class="player-info">
+<h3>Danilo</h3>
+<p>Lateral • Flamengo</p>
+</div>
+</div>
+
+<div class="player-card">
+<img src="https://upload.wikimedia.org/wikipedia/commons/c/c0/Douglas_Santos_2018.jpg">
+<div class="player-info">
+<h3>Douglas Santos</h3>
+<p>Lateral • Zenit</p>
+</div>
+</div>
+
+<div class="player-card">
+<img src="https://upload.wikimedia.org/wikipedia/commons/5/58/Gabriel_Magalhaes_2022.jpg">
+<div class="player-info">
+<h3>Gabriel Magalhães</h3>
+<p>Zagueiro • Arsenal</p>
+</div>
+</div>
+
+<div class="player-card">
+<img src="https://upload.wikimedia.org/wikipedia/commons/2/2d/Ibanez_2023.jpg">
+<div class="player-info">
+<h3>Ibañez</h3>
+<p>Zagueiro • Al Ahli</p>
+</div>
+</div>
+
+<div class="player-card">
+<img src="https://upload.wikimedia.org/wikipedia/commons/f/f9/Leo_Pereira_2023.jpg">
+<div class="player-info">
+<h3>Léo Pereira</h3>
+<p>Zagueiro • Flamengo</p>
+</div>
+</div>
+
+<div class="player-card">
+<img src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Marquinhos_2022.jpg">
+<div class="player-info">
+<h3>Marquinhos</h3>
+<p>Zagueiro • PSG</p>
+</div>
+</div>
+
+<div class="player-card">
+<img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/Wesley_2024.jpg">
+<div class="player-info">
+<h3>Wesley</h3>
+<p>Lateral • Roma</p>
+</div>
+</div>
+
+<!-- MEIO -->
+
+<div class="player-card">
+<img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Bruno_Guimaraes_2022.jpg">
+<div class="player-info">
+<h3>Bruno Guimarães</h3>
+<p>Meio-campo • Newcastle</p>
+</div>
+</div>
+
+<div class="player-card">
+<img src="https://upload.wikimedia.org/wikipedia/commons/7/73/Casemiro_2022.jpg">
+<div class="player-info">
+<h3>Casemiro</h3>
+<p>Volante • Manchester United</p>
+</div>
+</div>
+
+<div class="player-card">
+<img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Danilo_dos_Santos_2023.jpg">
+<div class="player-info">
+<h3>Danilo Santos</h3>
+<p>Volante • Fulham</p>
+</div>
+</div>
+
+<div class="player-card">
+<img src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Fabinho_2018.jpg">
+<div class="player-info">
+<h3>Fabinho</h3>
+<p>Volante • Al-Ittihad</p>
+</div>
+</div>
+
+<div class="player-card">
+<img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Lucas_Paqueta_2022.jpg">
+<div class="player-info">
+<h3>Lucas Paquetá</h3>
+<p>Meia • West Ham</p>
+</div>
+</div>
+
+<!-- ATACANTES -->
+
+<div class="player-card">
+<img src="https://upload.wikimedia.org/wikipedia/commons/7/71/Endrick_2024.jpg">
+<div class="player-info">
+<h3>Endrick</h3>
+<p>Atacante • Real Madrid</p>
+</div>
+</div>
+
+<div class="player-card">
+<img src="https://upload.wikimedia.org/wikipedia/commons/e/e5/Gabriel_Martinelli_2022.jpg">
+<div class="player-info">
+<h3>Gabriel Martinelli</h3>
+<p>Atacante • Arsenal</p>
+</div>
+</div>
+
+<div class="player-card">
+<img src="https://upload.wikimedia.org/wikipedia/commons/9/9f/Igor_Thiago_2024.jpg">
+<div class="player-info">
+<h3>Igor Thiago</h3>
+<p>Centroavante • Brentford</p>
+</div>
+</div>
+
+<div class="player-card">
+<img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Luiz_Henrique_2024.jpg">
+<div class="player-info">
+<h3>Luiz Henrique</h3>
+<p>Ponta • Botafogo</p>
+</div>
+</div>
+
+<div class="player-card">
+<img src="https://upload.wikimedia.org/wikipedia/commons/0/07/Matheus_Cunha_2022.jpg">
+<div class="player-info">
+<h3>Matheus Cunha</h3>
+<p>Atacante • Wolverhampton</p>
+</div>
+</div>
+
+<div class="player-card">
+<img src="https://upload.wikimedia.org/wikipedia/commons/7/70/Neymar_2022.jpg">
+<div class="player-info">
+<h3>Neymar</h3>
+<p>Camisa 10 • Santos</p>
+</div>
+</div>
+
+<div class="player-card">
+<img src="https://upload.wikimedia.org/wikipedia/commons/2/21/Raphinha_2022.jpg">
+<div class="player-info">
+<h3>Raphinha</h3>
+<p>Ponta • Barcelona</p>
+</div>
+</div>
+
+<div class="player-card">
+<img src="https://upload.wikimedia.org/wikipedia/commons/4/48/Rayan_2024.jpg">
+<div class="player-info">
+<h3>Rayan</h3>
+<p>Atacante • Vasco da Gama</p>
+</div>
+</div>
+
+<div class="player-card">
+<img src="https://upload.wikimedia.org/wikipedia/commons/4/4f/Vinicius_Junior_2022.jpg">
+<div class="player-info">
+<h3>Vinícius Júnior</h3>
+<p>Ponta • Real Madrid</p>
 </div>
 </div>
 
 </div>
-
 </section>
-
-<!-- JOGOS -->
-
-<section id="jogos">
-
-<h2 class="section-title">Jogos do Brasil</h2>
-
-<div class="games">
-
-<div class="game">
-<h3>Brasil x Marrocos</h3>
-<p>17 de Junho de 2026</p>
-</div>
-
-<div class="game">
-<h3>Brasil x Haiti</h3>
-<p>21 de Junho de 2026</p>
-</div>
-
-<div class="game">
-<h3>Brasil x Escócia</h3>
-<p>26 de Junho de 2026</p>
-</div>
-
-</div>
-
-</section>
-
-<!-- PALPITES -->
-
-<section id="palpites">
-
-<h2 class="section-title">Palpites dos Jogos</h2>
-
-<div class="bet-box">
-
-<input type="text" placeholder="Seu nome">
-
-<select>
-<option>Brasil x Marrocos</option>
-<option>Brasil x Haiti</option>
-<option>Brasil x Escócia</option>
-</select>
-
-<input type="text" placeholder="Digite seu palpite">
-
-<button class="btn" onclick="enviarPalpite()">
-Enviar Palpite
-</button>
-
-</div>
-
-</section>
-
-<footer>
-
-<p>Site Copa do Mundo 2026 © 2026</p>
-
-</footer>
-
-<script>
-
-/* CONTAGEM */
-
-const targetDate = new Date("Jun 11, 2026 00:00:00").getTime();
-
-setInterval(()=>{
-
-const now = new Date().getTime();
-
-const distance = targetDate - now;
-
-const days = Math.floor(distance / (1000*60*60*24));
-
-const hours = Math.floor((distance % (1000*60*60*24)) / (1000*60*60));
-
-const minutes = Math.floor((distance % (1000*60*60)) / (1000*60));
-
-const seconds = Math.floor((distance % (1000*60)) / 1000);
-
-document.getElementById("days").innerHTML = days;
-document.getElementById("hours").innerHTML = hours;
-document.getElementById("minutes").innerHTML = minutes;
-document.getElementById("seconds").innerHTML = seconds;
-
-},1000);
-
-/* PALPITE */
-
-function enviarPalpite(){
-
-alert("Palpite enviado com sucesso!");
-
-}
-
-</script>
-
-</body>
-</html>
