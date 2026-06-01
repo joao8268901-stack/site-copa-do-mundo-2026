@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Conscientização do Meio Ambiente</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#f4f7f4;
+    color:#333;
+}
+
+header{
+    background:linear-gradient(135deg,#2e7d32,#66bb6a);
+    color:white;
+    text-align:center;
+    padding:40px;
+}
+
+header h1{
+    font-size:3em;
+}
+
+header p{
+    margin-top:10px;
+    font-size:1.2em;
+}
+
+.container{
+    max-width:1100px;
+    margin:auto;
+    padding:30px;
+}
+
+.banner{
+    width:100%;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.2);
+}
+
+section{
+    margin-top:40px;
+}
+
+h2{
+    color:#2e7d32;
+    margin-bottom:15px;
+}
+
+.texto{
+    background:white;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 3px 10px rgba(0,0,0,0.1);
+    line-height:1.8;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+    margin-top:20px;
+}
+
+.card{
+    background:white;
+    padding:20px;
+    border-radius:10px;
+    text-align:center;
+    box-shadow:0 3px 10px rgba(0,0,0,0.1);
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+}
+
+.card h3{
+    color:#2e7d32;
+}
+
+.comentarios{
+    background:white;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 3px 10px rgba(0,0,0,0.1);
+}
+
+textarea{
+    width:100%;
+    height:120px;
+    padding:10px;
+    border:1px solid #ccc;
+    border-radius:8px;
+    resize:none;
+}
+
+button{
+    margin-top:10px;
+    padding:12px 25px;
+    background:#2e7d32;
+    color:white;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:16px;
+}
+
+button:hover{
+    background:#1b5e20;
+}
+
+#listaComentarios{
+    margin-top:20px;
+}
+
+.comentario{
+    background:#e8f5e9;
+    padding:10px;
+    border-radius:8px;
+    margin-bottom:10px;
+}
+
+#topo{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    background:#2e7d32;
+    color:white;
+    border:none;
+    width:50px;
+    height:50px;
+    border-radius:50%;
+    font-size:20px;
+}
+
+footer{
+    background:#2e7d32;
+    color:white;
+    text-align:center;
+    padding:20px;
+    margin-top:40px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>🌎 Conscientização do Meio Ambiente</h1>
+    <p>Pequenas atitudes podem transformar o planeta.</p>
+</header>
+
+<div class="container">
+
+    <img class="banner"
+    src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e"
+    alt="Natureza">
+
+    <section>
+        <h2>Importância da Preservação Ambiental</h2>
+
+        <div class="texto">
+            <p>
+                O meio ambiente é essencial para a sobrevivência de todos os seres vivos.
+                A preservação dos recursos naturais garante água limpa, ar puro,
+                biodiversidade e qualidade de vida para as gerações atuais e futuras.
+            </p>
+
+            <br>
+
+            <p>
+                Cada pessoa pode contribuir por meio de atitudes simples, como economizar água,
+                reciclar resíduos, evitar desperdícios e respeitar a natureza.
+                A conscientização ambiental é um passo importante para construir um mundo mais sustentável.
+            </p>
+        </div>
+    </section>
+
+    <section>
+        <h2>Como Ajudar o Meio Ambiente?</h2>
+
+        <div class="cards">
+
+            <div class="card">
+                <h3>💧 Economize Água</h3>
+                <p>Feche a torneira ao escovar os dentes e evite desperdícios.</p>
+            </div>
+
+            <div class="card">
+                <h3>♻️ Recicle</h3>
+                <p>Separe corretamente os materiais recicláveis.</p>
+            </div>
+
+            <div class="card">
+                <h3>🌳 Plante Árvores</h3>
+                <p>As árvores ajudam a melhorar a qualidade do ar.</p>
+            </div>
+
+            <div class="card">
+                <h3>⚡ Economize Energia</h3>
+                <p>Desligue aparelhos quando não estiver utilizando.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <section>
+        <h2>Deixe seu Comentário</h2>
+
+        <div class="comentarios">
+
+            <textarea id="comentario"
+            placeholder="Escreva sua opinião sobre a preservação do meio ambiente..."></textarea>
+
+            <button onclick="adicionarComentario()">
+                Publicar Comentário
+            </button>
+
+            <div id="listaComentarios"></div>
+
+        </div>
+    </section>
+
+</div>
+
+<button id="topo" onclick="voltarTopo()">↑</button>
+
+<footer>
+    <p>© 2026 - Projeto Educacional de Conscientização Ambiental</p>
+</footer>
+
+<script>
+function adicionarComentario(){
+
+    let texto = document.getElementById("comentario").value;
+
+    if(texto.trim() === ""){
+        alert("Digite um comentário.");
+        return;
+    }
+
+    let novoComentario = document.createElement("div");
+    novoComentario.classList.add("comentario");
+    novoComentario.textContent = texto;
+
+    document.getElementById("listaComentarios")
+    .appendChild(novoComentario);
+
+    document.getElementById("comentario").value = "";
+}
+
+function voltarTopo(){
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+}
+</script>
+
+</body>
+</html>
